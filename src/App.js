@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout.js";
+import Home from "./pages/Home.js";
+import Blog from "./pages/Blog.js";
+import Projects from "./pages/Projects.js";
+import NoPage from "./pages/NoPage.js";
+import About from "./pages/About.js";
+import Saccharine from "./pages/Saccharine.js";
+import Audiochain from "./pages/blog/posts/Audiochain.js";
+import SelfPacedDegree from "./pages/blog/posts/SelfPacedDegree.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />} />
+        <Route index element={<Home />} />
+        <Route path="projects" element={<Projects />} />
+        <Route path="blog" element={<Blog />} />
+        <Route path="about" element={<About />} />
+        <Route path="saccharine" element={<Saccharine />} />
+        <Route path="blog/post/audiochain" element={<Audiochain />} />
+        <Route path="blog/post/selfpaceddegree" element={<SelfPacedDegree />} />
+        <Route path="*" element={<NoPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

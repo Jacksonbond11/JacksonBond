@@ -24,7 +24,7 @@ const Saccharine = () => {
               className=" object-cover w-full h-96 cursor-pointer p-4"
             />
           </div>
-          <h2>View the store</h2>
+          <h2>View the store (coming soon)</h2>
           <button className="btn text-xl" onClick={navigate}>
             saccharine
           </button>

@@ -10,7 +10,7 @@ const Projects = () => {
       <div className="flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl my-4">Projects</h1>
-          <div className="md:flex p-10">
+          <div className="md:flex md:p-8">
             <ProjectCard
               title={"Vegain Recipes"}
               description={
@@ -27,14 +27,14 @@ const Projects = () => {
               img={"/botify.png"}
               link={"https://github.com/Jacksonbond11/Botify"}
             />
-          </div>
 
-          <ProjectCard
-            title={"NWA Mold"}
-            description={"A business site for NWA Mold."}
-            img={"/nwamold.png"}
-            link={"https://nwamold.dylanbaine.com/"}
-          />
+            <ProjectCard
+              title={"NWA Mold"}
+              description={"A business site for NWA Mold."}
+              img={"/nwamold.png"}
+              link={"https://nwamold.dylanbaine.com/"}
+            />
+          </div>
         </div>
       </div>
       <Footer />

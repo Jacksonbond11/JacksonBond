@@ -16,7 +16,7 @@ const Projects = () => {
               description={
                 "AI powered vegan recipes provided without the fluff. You shouldn't need to read a life story to view a recipe."
               }
-              img={"/vegainrecipes.png"}
+              img={"/projects/vegainrecipes.png"}
               link={"https://www.vegainrecipes.com"}
             />
             <ProjectCard
@@ -24,14 +24,14 @@ const Projects = () => {
               description={
                 "Discord bot to add songs to a Spotify playlist automatically."
               }
-              img={"/botify.png"}
+              img={"/projects/botify.png"}
               link={"https://github.com/Jacksonbond11/Botify"}
             />
 
             <ProjectCard
               title={"NWA Mold"}
               description={"A business site for NWA Mold."}
-              img={"/nwamold.png"}
+              img={"/projects/nwamold.png"}
               link={"https://nwamold.dylanbaine.com/"}
             />
           </div>

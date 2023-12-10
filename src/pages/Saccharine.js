@@ -16,11 +16,11 @@ const Saccharine = () => {
           <h1 className="text-2xl my-4">A streetwear brand.</h1>
           <div className="flex flex-col p-4">
             <img
-              src="saccharine1.png"
+              src="saccharine/saccharine1.png"
               className=" object-cover w-full h-96 cursor-pointer p-4"
             />
             <img
-              src="saccharine2.png"
+              src="saccharine/saccharine2.png"
               className=" object-cover w-full h-96 cursor-pointer p-4"
             />
           </div>

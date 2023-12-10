@@ -14,7 +14,7 @@ const Blog = () => {
         <div className="m-4">
           <BlogCard
             link={"post/audiochain"}
-            img={"blog-theaudiochain.png"}
+            img={"blog/blog-theaudiochain.png"}
             title={"The Audio Chain"}
           />
         </div>
@@ -22,7 +22,7 @@ const Blog = () => {
         <div className="m-4">
           <BlogCard
             link={"post/selfpaceddegree"}
-            img={"blog-selfpaceddegree.png"}
+            img={"blog/blog-selfpaceddegree.png"}
             title={
               "Earning a Bachelor's of Computer Science in a Self Paced Program"
             }

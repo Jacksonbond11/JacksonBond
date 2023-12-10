@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 const Saccharine = () => {
   const navigate = () => {
@@ -9,11 +10,11 @@ const Saccharine = () => {
   return (
     <div>
       <Header />
-      <div className="flex items-center justify-center">
+      <div className="flex flex-col items-center justify-center py-4">
         <div className="text-center">
           <h1 className="text-4xl my-4">saccharine</h1>
           <h1 className="text-2xl my-4">A streetwear brand.</h1>
-          <div className="flex p-4">
+          <div className="flex flex-col p-4">
             <img
               src="saccharine1.png"
               className=" object-cover w-full h-96 cursor-pointer p-4"
@@ -29,6 +30,7 @@ const Saccharine = () => {
           </button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

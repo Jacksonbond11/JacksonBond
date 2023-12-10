@@ -11,7 +11,7 @@ const BlogPost = ({ title, body }) => {
   };
 
   return (
-    <div>
+    <div className="py-4">
       <div className="text-sm breadcrumbs p-4">
         <ul>
           <li onClick={navigateHome}>

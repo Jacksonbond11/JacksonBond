@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../Components/Header";
 import ProjectCard from "../Components/ProjectCard";
+import Footer from "../Components/Footer";
 
 const Projects = () => {
   return (
@@ -9,7 +10,7 @@ const Projects = () => {
       <div className="flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl my-4">Projects</h1>
-          <div className="flex p-10">
+          <div className="md:flex p-10">
             <ProjectCard
               title={"Vegain Recipes"}
               description={
@@ -36,6 +37,7 @@ const Projects = () => {
           />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

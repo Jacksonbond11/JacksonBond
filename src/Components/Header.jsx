@@ -1,49 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const navigate = useNavigate();
 
-  const navigateToHome = () => {
-    navigate("/");
+  const navigateTo = (path) => {
+    navigate(path);
+    setIsMenuOpen(false); // Close the menu on selection
   };
-
-  const navigateToAbout = () => {
-    navigate("/about");
-  };
-
-  const navigateToBlog = () => {
-    navigate("/blog");
-  };
-
-  const navigateToProjects = () => {
-    navigate("/projects");
-  };
-  const navigateToSaccharine = () => {
-    navigate("/saccharine");
-  };
-
   return (
-    <div className="navbar bg-primary-content flex justify-between">
-      <div className="flex-1">
-        <button className="btn text-xl" onClick={navigateToHome}>
+    <div className="navbar bg-primary-content relative">
+      <div className="flex-1 flex justify-between items-center">
+        <button className="btn text-xl" onClick={() => navigateTo("/")}>
           Jackson Bond
         </button>
+        <button
+          className={`btn text-xl sm:hidden`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          ☰
+        </button>
       </div>
-      <ul className="menu menu-horizontal bg-base-200 rounded-box">
-        <li>
-          <button onClick={navigateToAbout}>About</button>
-        </li>
-        <li onClick={navigateToProjects}>
-          <button onClick={navigateToProjects}>Projects</button>
-        </li>
-        <li onClick={navigateToBlog}>
-          <button onClick={navigateToBlog}>Blog</button>
-        </li>
-        <li onClick={navigateToSaccharine}>
-          <button onClick={navigateToSaccharine}>Saccharine</button>
-        </li>
-      </ul>
+      <div
+        className={`absolute z-10 sm:relative sm:block ${
+          isMenuOpen ? "block" : "hidden"
+        } right-0 w-40 sm:w-auto top-full`}
+      >
+        <ul className="menu bg-base-200 rounded-box sm:flex sm:flex-row">
+          <li>
+            <button onClick={() => navigateTo("/about")}>About</button>
+          </li>
+          <li>
+            <button onClick={() => navigateTo("/projects")}>Projects</button>
+          </li>
+          <li>
+            <button onClick={() => navigateTo("/blog")}>Blog</button>
+          </li>
+          <li>
+            <button onClick={() => navigateTo("/saccharine")}>
+              Saccharine
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

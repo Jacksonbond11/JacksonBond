@@ -2,11 +2,11 @@ import React from "react";
 
 const AboutContent = () => {
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen">
+    <section className="flex flex-col items-center justify-center min-h-screen py-4">
       <div className="text-center">
-        <h1 className="text-7xl">Hi I am Jackson.</h1>
+        <h1 className="text-7xl py-12">Hi I am Jackson.</h1>
       </div>
-      <div className="flex flex-col justify-center w-1/2">
+      <div className="flex flex-col justify-center w-9/12">
         <p>
           Hello! I'm an aspiring software developer from Oklahoma City with a
           unique journey into the world of technology. My adventure in tech

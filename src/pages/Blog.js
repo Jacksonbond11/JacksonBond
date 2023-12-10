@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../Components/Header";
 import BlogCard from "../Components/BlogCard";
+import Footer from "../Components/Footer";
 
 const Blog = () => {
   return (
@@ -28,6 +29,7 @@ const Blog = () => {
           />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

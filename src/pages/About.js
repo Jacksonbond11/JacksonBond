@@ -7,7 +7,7 @@ const About = () => {
     <div>
       <Header />
       <AboutContent />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

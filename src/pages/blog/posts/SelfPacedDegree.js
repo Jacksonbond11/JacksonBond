@@ -13,7 +13,7 @@ const SelfPacedDegree = () => {
         }
         body={"Was it worth it?"}
       />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

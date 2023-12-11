@@ -30,7 +30,7 @@ const Saccharine = () => {
           </button>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -11,7 +11,7 @@ const SelfPacedDegree = () => {
         title={
           "Earning a Bachelor's of Computer Science in a Self Paced Program"
         }
-        body={"Was it worth it?"}
+        body={"Was it worth it? Yeah."}
       />
       {/* <Footer /> */}
     </div>

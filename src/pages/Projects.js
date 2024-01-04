@@ -32,7 +32,7 @@ const Projects = () => {
               title={"NWA Mold"}
               description={"A business site for NWA Mold."}
               img={"/projects/nwamold.png"}
-              link={"https://nwamold.dylanbaine.com/"}
+              link={"https://www.nwamoldinspector.com/"}
             />
           </div>
         </div>

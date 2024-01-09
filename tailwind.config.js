@@ -5,7 +5,7 @@ module.exports = {
     "node_modules/react-daisyui/dist/**/*.js",
   ],
   daisyui: {
-    themes: ["dim"],
+    themes: ["dim", "synthwave"],
   },
   plugins: [require("daisyui")],
 };

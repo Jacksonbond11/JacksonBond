@@ -18,10 +18,12 @@ const Saccharine = () => {
             <img
               src="/saccharine/saccharine1.png"
               className=" object-cover w-full h-96 cursor-pointer p-4"
+              alt=""
             />
             <img
               src="/saccharine/saccharine2.png"
               className=" object-cover w-full h-96 cursor-pointer p-4"
+              alt=""
             />
           </div>
           <h2>View the store (coming soon)</h2>
@@ -30,7 +32,7 @@ const Saccharine = () => {
           </button>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

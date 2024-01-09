@@ -2,15 +2,17 @@ import React from "react";
 import Header from "../Components/Header";
 import ProjectCard from "../Components/ProjectCard";
 import Footer from "../Components/Footer";
+import BackgroundImage from "../Components/BackgroundImage";
 
 const Projects = () => {
   return (
     <div>
       <Header />
-      <div className="flex items-center justify-center">
+      <BackgroundImage />
+      <div className="m-auto max-w-7xl">
         <div className="text-center">
           <h1 className="text-4xl my-4">Projects</h1>
-          <div className="md:flex md:p-8">
+          <div className="md:flex md:p-8 items-center justify-between p-2 m-auto">
             <ProjectCard
               title={"Vegain Recipes"}
               description={
@@ -39,7 +41,7 @@ const Projects = () => {
           </div>
         </div>
       </div>
-      <div className="flex-grow"></div>
+
       <Footer />
     </div>
   );

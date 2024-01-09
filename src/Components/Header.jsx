@@ -47,11 +47,14 @@ const Header = () => {
           </ul>
         </div>
       </div>
-      <input
-        type="checkbox"
-        value="synthwave"
-        className="checkbox theme-controller"
-      />
+      <div className="flex p-2">
+        <input
+          type="checkbox"
+          value="synthwave"
+          className="checkbox theme-controller"
+        />
+        <p>🕺</p>
+      </div>
     </div>
   );
 };

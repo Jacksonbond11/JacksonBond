@@ -2,10 +2,12 @@ import React from "react";
 import Header from "../Components/Header";
 import BlogCard from "../Components/BlogCard";
 import Footer from "../Components/Footer";
+import BackgroundImage from "../Components/BackgroundImage";
 
 const Blog = () => {
   return (
     <div>
+      <BackgroundImage />
       <Header />
       <div className="text-center">
         <h1 className="text-4xl my-4">Posts</h1>

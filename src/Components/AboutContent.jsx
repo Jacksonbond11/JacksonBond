@@ -8,12 +8,12 @@ const AboutContent = () => {
       </div>
       <div className="flex flex-col justify-center w-9/12">
         <p>
-          Hello! I'm an aspiring software developer from Oklahoma City with a
-          unique journey into the world of technology. My adventure in tech
-          began unexpectedly when I stepped into the role of a manual QA, a
-          position I embraced with no prior technical experience. This leap of
-          faith wasn't just a career change; it ignited a passion for the
-          software development lifecycle that I never knew I had.{" "}
+          Hello! I'm a software developer from Oklahoma City with a unique
+          journey into the world of technology. My adventure in tech began
+          unexpectedly when I stepped into the role of a manual QA, a position I
+          embraced with no prior technical experience. This leap of faith wasn't
+          just a career change; it ignited a passion for the software
+          development lifecycle that I never knew I had.{" "}
         </p>{" "}
         <br />
         <p>

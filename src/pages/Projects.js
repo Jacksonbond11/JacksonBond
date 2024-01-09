@@ -18,6 +18,7 @@ const Projects = () => {
               }
               img={"/projects/vegainrecipes.png"}
               link={"https://www.vegainrecipes.com"}
+              skills={["NodeJS", "React", "Postgresql"]}
             />
             <ProjectCard
               title={"Botify"}
@@ -26,18 +27,20 @@ const Projects = () => {
               }
               img={"/projects/botify.png"}
               link={"https://github.com/Jacksonbond11/Botify"}
+              skills={["NodeJS"]}
             />
-
             <ProjectCard
               title={"NWA Mold"}
               description={"A business site for NWA Mold."}
               img={"/projects/nwamold.png"}
               link={"https://www.nwamoldinspector.com/"}
+              skills={["PHP", "Laravel"]}
             />
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <div className="flex-grow"></div>
+      <Footer />
     </div>
   );
 };

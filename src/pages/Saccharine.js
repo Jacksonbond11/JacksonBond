@@ -4,7 +4,7 @@ import Footer from "../Components/Footer";
 
 const Saccharine = () => {
   const navigate = () => {
-    window.open("https://www.jacksonbond.dev", "_blank");
+    window.open("https://www.saccharine.shop", "_blank");
   };
 
   return (

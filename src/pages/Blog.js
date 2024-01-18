@@ -9,10 +9,10 @@ const Blog = () => {
     <div>
       <BackgroundImage />
       <Header />
-      <div className="text-center">
+      <div className="text-center ">
         <h1 className="text-4xl my-4">Posts</h1>
       </div>
-      <div className="flex flex-row flex-wrap items-center justify-center m-20">
+      <div className="flex flex-row flex-wrap items-center justify-center m-20 min-h-[65vh]">
         <div className="m-4">
           <BlogCard
             link={"post/audiochain"}

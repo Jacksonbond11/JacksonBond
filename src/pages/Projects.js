@@ -9,7 +9,7 @@ const Projects = () => {
     <div>
       <Header />
       <BackgroundImage />
-      <div className="m-auto max-w-7xl">
+      <div className="m-auto max-w-7xl min-h-[90vh]">
         <div className="text-center">
           <h1 className="text-4xl my-4">Projects</h1>
           <div className="md:flex md:p-8 items-center justify-between p-2 m-auto">

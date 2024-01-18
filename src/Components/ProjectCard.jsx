@@ -14,7 +14,7 @@ const ProjectCard = ({ title, description, img, link, skills }) => {
   };
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl h-[60vh]">
+    <div className="card w-96 bg-base-100 shadow-xl h-[50vh] mb-2">
       <figure className="px-10 pt-10">
         <img
           src={img}

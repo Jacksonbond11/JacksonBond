@@ -42,7 +42,7 @@ const Diapers = () => {
             imgWidth="w-full"
             quantityProp="1"
             title="Huggies 3"
-            startingTotal={8}
+            startingTotal={10}
             />
           <DiaperCard
             imgSrc="/diapersImages/4.jpg"
@@ -79,7 +79,7 @@ const Diapers = () => {
             imgWidth="w-full"
             quantityProp="1"
             title="Fragrence Free Wipes"
-            startingTotal={8}
+            startingTotal={10}
           />
         </div>
         <div>

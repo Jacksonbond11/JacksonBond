@@ -32,8 +32,14 @@
 }
 
 .bigname {
-  font-size: 5rem; /* Adjust the size for responsiveness */
+  font-size: 3.5rem; /* Adjust the size for responsiveness */
   text-align: center;
+}
+
+@media (min-width: 640px) {
+  .bigname {
+    font-size: 5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -63,16 +69,15 @@
 .mainPageSection p {
   position: relative;
   top: -50px;
-  left: 25%;
+  left: 0;
   text-align: center;
 }
-@media (min-width: 768px) {
-    .mainPageSection p {
-        
 
-        
-      }
+@media (min-width: 400px) {
+  .mainPageSection p {
+    top: 20px;
   }
+}
 
 .skillsSection {
   background-color: #A3C8C1;
@@ -88,8 +93,14 @@
 }
 
 .skillsSection h1 {
-  font-size: 5rem; /* Adjust the size for responsiveness */
+  font-size: 3rem; /* Adjust the size for responsiveness */
   text-align: center;
+}
+
+@media (min-width: 640px) {
+  .skillsSection h1 {
+    font-size: 5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -136,9 +147,15 @@
 }
 
 .projectSection h1 {
-  font-size: 5rem; /* Adjust the size for responsiveness */
+  font-size: 3rem; /* Adjust the size for responsiveness */
   letter-spacing: normal;
   text-align: center;
+}
+
+@media (min-width: 640px) {
+  .projectSection h1 {
+    font-size: 5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -198,8 +215,14 @@
 }
 
 .aboutSection h1 {
-  font-size: 5rem; /* Adjust the size for responsiveness */
+  font-size: 3rem; /* Adjust the size for responsiveness */
   text-align: center;
+}
+
+@media (min-width: 640px) {
+  .aboutSection h1 {
+    font-size: 5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -228,8 +251,14 @@
 }
 
 .linksSection h1 {
-  font-size: 5rem; /* Adjust the size for responsiveness */
+  font-size: 3rem; /* Adjust the size for responsiveness */
   text-align: center;
+}
+
+@media (min-width: 640px) {
+  .linksSection h1 {
+    font-size: 5rem;
+  }
 }
 
 @media (min-width: 768px) {

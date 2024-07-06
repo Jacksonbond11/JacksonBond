@@ -4,10 +4,9 @@ import BackgroundImage from "./BackgroundImage";
 const AboutContent = () => {
   return (
     <div>
-      <BackgroundImage />
-      <section className="flex flex-col items-center justify-center min-h-full py-4 mb-12 text-white">
-        <div className="text-center ">
-          <h1 className="text-7xl py-12">Hi I am Jackson.</h1>
+      <section className="flex flex-col items-center justify-center min-h-full">
+        <div className="">
+          <h2 className="text-3xl py-12">Hi I am Jackson.</h2>
         </div>
         <div className="flex flex-col justify-center w-9/12">
           <p>
@@ -37,7 +36,7 @@ const AboutContent = () => {
           </p>
           <br />
           <p>
-            As I transition from QA to software development, I am eager to bring
+            As I continue honing my skills in software development, I am eager to bring
             my unique blend of skills, experience, and passion to the table. My
             journey through diverse fields has taught me the value of
             adaptability, continuous learning, and the beauty of creating

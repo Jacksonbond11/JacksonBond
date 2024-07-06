@@ -1,3 +1,142 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+font-family: mada;
+src: url('https://fonts.googleapis.com/css2?family=Mada:wght@200..900&display=swap');
+}
+
+:root {
+    --mouse-x: 0;
+    --mouse-y: 0;
+  }
+
+.outer {
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+
+    height: 100vh;
+}
+
+.mainPageSection{
+background-color: #FFF8E8;
+color: black;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+font-family: 'mada';
+scroll-snap-align: center; 
+
+}
+
+.bigname{
+    font-size: 200px;
+}
+
+.bigname::after {
+    content: "";
+    position: absolute;
+    top: calc(var(--mouse-y, 0) * 1px - 50px);
+    left: calc(var(--mouse-x, 0) * 1px - 50px);
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(white, #3984ff00 80%);
+  
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+.mainPageSection p {
+    position: relative;
+    top: -50px;
+    left: 25%;
+}
+
+.skillsSection{
+    background-color: #A3C8C1;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'mada';
+    scroll-snap-align: center; 
+    }
+    
+.skillsSection h1{
+    font-size: 200px;
+}
+
+.skillsSection ul{
+    padding-right: 25%;
+}
+
+.projectSection{
+    background-color: #DBFFF9;
+    color: black;
+    justify-content: space-around;
+    min-height: 100vh;
+    font-family: 'mada';
+    text-align: center;
+    scroll-snap-align: center; 
+  
+    }
+    
+.projectSection h1{
+    font-size: 150px;
+    letter-spacing: 80px;;
+ 
+}
+.projectsCont{
+    display: flex;
+    justify-content: space-around;
+}
+.project {
+    width: 20%;
+    
+}
+.project img{
+    border-radius: 5px;
+}
+.aboutSection{
+    background-color: #B8AA87;
+    color: black;
+    justify-content: space-around;
+    min-height: 100vh;
+    font-family: 'mada';
+    text-align: center;
+    scroll-snap-align: center; 
+  
+    }
+
+    .aboutSection h1{
+        font-size: 200px;
+    }
+
+    .linksSection{
+        background-color: #4C4637;
+        color: black;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'mada';
+        scroll-snap-align: center; 
+        }
+        
+    .linksSection h1{
+        font-size: 200px;
+    }
+    
+    .linksSection ul{
+        padding-right: 25%;
+    }
+
+    .stepsCont{
+        position: fixed;
+        top: 35%;
+        left: 95vw;
+    }

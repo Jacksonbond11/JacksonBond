@@ -23,7 +23,7 @@ const DiaperCard = ({
   const fetchCurrentQuantity = async () => {
     try {
       const response = await fetch(
-        `https://24.144.94.207:3001/api/diapers/${title}/quantity`
+        `https://api.vegainrecipes.com:3001/api/diapers/${title}/quantity`
       );
       const result = await response.json();
       const totalBought = result.total_bought || 0;
@@ -40,8 +40,8 @@ const DiaperCard = ({
   const handleSubmit = async () => {
     const endpoint =
       quantityProp === "1"
-        ? "https://24.144.94.207:3001/api/diapers"
-        : "https://24.144.94.207:3001/api/beer";
+        ? "https://api.vegainrecipes.com:3001/api/diapers"
+        : "https://api.vegainrecipes.com:3001/api/beer";
     const data =
       quantityProp === "1"
         ? { name, quantity: parseInt(quantity, 10), title }

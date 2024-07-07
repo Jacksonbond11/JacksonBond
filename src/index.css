@@ -67,17 +67,26 @@
 }
 
 .mainPageSection p {
-  position: relative;
-  top: -50px;
-  left: 0;
-  text-align: center;
-}
-
-@media (min-width: 400px) {
-  .mainPageSection p {
-    top: 20px;
+    position: relative;
+    top: -50px; /* Initial value for small screens */
+    left: 0;
+    text-align: center;
   }
-}
+  
+  @media (min-width: 300px) {
+    .mainPageSection p {
+      top: 20px; /* Adjust for screens larger than 400px */
+    }
+  }
+  
+  @media (min-width: 800px) {
+    .mainPageSection p {
+      top: -50px; /* Reset for screens larger than 800px */
+      left: 300px;
+      font-size: 1.6rem;
+    }
+  }
+  
 
 .skillsSection {
   background-color: #A3C8C1;
@@ -106,6 +115,7 @@
 @media (min-width: 768px) {
   .skillsSection {
     flex-direction: row; /* Change to row layout on larger screens */
+    justify-content: space-around;
   }
 
   .skillsSection h1 {

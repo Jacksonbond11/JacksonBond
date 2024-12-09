@@ -6,20 +6,20 @@ const ProjectCard = ({ title, description, img, link, skills }) => {
   };
 
   let skillsColors = {
-    React: "badge-secondary",
-    NodeJS: "badge-primary",
-    PHP: "badge-neutral",
-    Laravel: "badge-accent",
-    Postgresql: "badge-info",
+    React: "secondary",
+    NodeJS: "primary",
+    PHP: "neutral",
+    Laravel: "accent",
+    Postgresql: "base-content",
   };
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl h-[50vh] mb-2">
+    <div className="border-2 border-black w-96 bg-base-100 h-[60vh] mb-2">
       <figure className="px-10 pt-10">
         <img
           src={img}
           alt={title}
-          className="rounded-xl object-cover w-full h-48 cursor-pointer"
+          className=" object-cover w-full h-48 cursor-pointer"
           onClick={navigate}
         />
       </figure>
@@ -27,15 +27,15 @@ const ProjectCard = ({ title, description, img, link, skills }) => {
         <h2 className="card-title">{title}</h2>
         <p>{description}</p>
         <div className="card-actions">
-          <button className="btn btn-primary badge-" onClick={navigate}>
+          <button className="border-[1.5px] border-black text-xl p-2 hover:bg-primary mr-2" onClick={navigate}>
             View
           </button>
         </div>
-        <div className="">
+        <div className="flex">
           {skills.map((skill, index) => (
             <p
               key={index}
-              className={`badge ${skillsColors[skill]} text-xs m-1`}
+              className={`border-2 border-black bg-${skillsColors[skill]} text-xs m-1 p-1`}
             >
               {skill}
             </p>

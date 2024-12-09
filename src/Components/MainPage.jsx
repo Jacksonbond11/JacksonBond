@@ -1,124 +1,85 @@
 import React, { useRef, useEffect } from "react";
-import BackgroundImage from "./BackgroundImage";
-import Stats from "./Stats";
-import Steps from "./Steps";
-import AboutContent from "./AboutContent";
-import { Badge } from "react-daisyui";
+import Header from "../Components/Header";
 
 const MainPage = () => {
-  const useMousePosition = () => {
-    const [mousePosition, setMousePosition] = React.useState({
-      x: null,
-      y: null,
-    });
-
-    React.useEffect(() => {
-      const updateMousePosition = (ev) => {
-        setMousePosition({ x: ev.clientX, y: ev.clientY });
-      };
-
-      window.addEventListener("mousemove", updateMousePosition);
-
-      // Cleanup the event listener when the component unmounts
-      return () => {
-        window.removeEventListener("mousemove", updateMousePosition);
-      };
-    }, []);
-
-    // useEffect to log mouse position whenever it changes
-    React.useEffect(() => {
-      console.log(mousePosition);
-    }, [mousePosition]); // Dependency array includes mousePosition
-
-    return mousePosition; // Return the mouse position if you need to use it elsewhere
-  };
-
   return (
-    <div className="outer">
-      <section className="mainPageSection">
-        <h1 className="bigname">Jackson Bond</h1>
-        <p>Software Developer - Software Quality Engineer</p>
-      </section>
+    <div>
+      <Header />
+      <div className="flex justify-apart h-[50vh]">
+        <div className="flex-1 m-auto align-middle text-center">
+          <h1 className="text-[100px] my-4 font-bold flex-1">JACKSON BOND</h1>
+        </div>
+        <div className="border-black border-2 border-t-0 flex-1 flex flex-col justify-center items-center h-full">
+          <p className="text-[25px] my-4 text-center">
+            Software Developer // Software Development Engineer in Test.</p>
+            <p className="text-[25px] my-4 text-center">I love to create and learn new things.
+          </p>
+        </div>
+      </div>
+      <div className=" flex justify-center m-6">
+        <h2 className=" text-3xl">Some of my projects</h2>
+      </div>
 
-      <section class="skillsSection">
-        <h1>Skills</h1>
-        <ul>
-          <li>Javascript / React</li>
-          <li>PHP / Laravel</li>
-          <li>SQL / Postgres</li>
-          <li>C# / .NET</li>
-          <li>Figma / Photoshop</li>
-        </ul>
-      </section>
-
-      <section class="projectSection">
-        <h1>PROJECTS</h1>
-        <div class="projectsCont">
-          <div class="project">
-            <a href="https://www.vegainrecipes.com">
-              <h2 className="font-bold text-3xl">Vegain Recipes</h2>
-              <img src="/projects/vegain-card.png" className="" />
-            </a>
-            <div className="flex mt-2 gap-2">
-            <Badge className="badge-primary">React</Badge>
-            <Badge className="badge-secondary">NodeJS</Badge>
-            <Badge className="badge-warning">SQL</Badge>
-            <Badge className="badge-accent">API</Badge>
-            </div>
-          </div>
-          <div class="project">
-            <a href="https://www.saccharine.shop">
-              <h2 className="font-bold text-3xl">saccharine streetwear</h2>
-              <img src="/projects/saccharine.png" className="" />
-            </a>
-            <div className="flex mt-2 gap-2">
-            <Badge className="badge-primary">Laravel</Badge>
-            <Badge className="badge-secondary">MVC</Badge>
-            <Badge className="badge-warning">Ecommerce</Badge>
-            <Badge className="badge-accent">Photoshop</Badge>
-            </div>
-          </div>
-          <div class="project">
-            <a href="www.vegainrecipes.com">
-              <h2 className="font-bold text-3xl">Botify</h2>
-              <img src="/projects/botify.png" className="h-1/2 m-auto"  />
-            </a>
-            <div className="flex mt-2 gap-2">
-            <Badge className="badge-primary">NodeJS</Badge>
-            <Badge className="badge-secondary">Selfhost</Badge>
-            <Badge className="badge-warning">DiscordJS</Badge>
-            <Badge className="badge-accent">API</Badge>
-            </div>
-          </div>
-          <div class="project">
-            <a href="www.vegainrecipes.com">
-              <h2 className="font-bold text-3xl">NWA Mold Inspector</h2>
-              <img src="/projects/nwamold.png" className="" />
-            </a>
-            <div className="flex mt-2 gap-2">
-            <Badge className="badge-primary">Laravel</Badge>
-            <Badge className="badge-secondary">SQL</Badge>
-            <Badge className="badge-warning">CMS</Badge>
-            <Badge className="badge-accent">Marketing</Badge>
+      {/* //project 1 */}
+      <div className="flex justify-apart ">
+        <div className="flex flex-col  border-black border-2 max-w-[50vw] text-center p-2 pb-6 ml-1 mr-1">
+          <h1 className="text-[60px] my-4 font-bold flex-1">Somatika Tattoo</h1>
+          <div className="flex justify-center ">
+            <div className="relative w-3/4 group cursor-pointer">
+              <div
+                className="absolute border-2 border-black group-hover:bg-accent bg-primary"
+                style={{
+                  top: "12px",
+                  left: "-12px",
+                  width: "100%",
+                  height: "100%",
+                }}
+              ></div>
+              <img src="/somatika.jpg" className="w-full relative" />
             </div>
           </div>
         </div>
-      </section>
 
-      <section class="aboutSection">
-        <h1>About</h1>
-        <AboutContent />
-      </section>
-      <section class="linksSection">
-        <h1>Links</h1>
-        <ul>
-          <li><a href="https://github.com/Jacksonbond11/">GitHub</a></li>
-          <li><a  href="https://www.linkedin.com/in/jacksonbond1/">LinkedIn</a></li>
-          <li>SQL</li>
-          <li>HTML</li>
-        </ul>
-      </section>
-      {/* <Steps /> */}
+        <div className="flex flex-col  border-black border-2 max-w-[50vw] text-center p-2 pb-6 ml-1 mr-1">
+          <h1 className="text-[60px] my-4 font-bold flex-1">
+            saccharine streetwear
+          </h1>
+          <div className="flex justify-center ">
+            <div className="relative w-3/4 group cursor-pointer">
+              <div
+                className="absolute border-2 border-black group-hover:bg-accent bg-primary"
+                style={{
+                  top: "12px",
+                  left: "-12px",
+                  width: "100%",
+                  height: "100%",
+                }}
+              ></div>
+              <img src="/saccharine.jpg" className="w-full relative" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/projects">
+        <div className="border-black border-2 border-t-0 ml-1 mr-1 text-center hover:bg-primary hover:cursor-pointer mb-20">
+          <p className="text-[25px]">View more projects</p>
+        </div>
+      </a>
+
+      <div className="text-center m-6 align-middle">
+        <h2 className=" text-3xl">Some of my links</h2>
+        <div className="">
+          <ul>
+            <a href="https://github.com/JacksonBond11">
+              <li className="border-2 border-transparent hover:border-black hover:bg-accent">Github</li>
+            </a>
+            <a href="https://www.linkedin.com/in/jacksonbond1/">
+              <li className="border-2 border-transparent hover:border-black  hover:bg-accent">Linkedin</li>
+            </a>
+         
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

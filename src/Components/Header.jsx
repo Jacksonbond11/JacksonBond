@@ -12,9 +12,9 @@ const Header = () => {
   };
   return (
     <div>
-      <div className="navbar bg-primary-content relative">
+      <div className="navbar relative border-b-2 border-black">
         <div className="flex-1 flex justify-between items-center">
-          <button className="btn text-xl" onClick={() => navigateTo("/")}>
+          <button className="border-[1.5px] border-black text-xl p-2 hover:bg-primary" onClick={() => navigateTo("/")}>
             Jackson Bond
           </button>
           <button
@@ -29,32 +29,25 @@ const Header = () => {
             isMenuOpen ? "block" : "hidden"
           } right-0 w-40 sm:w-auto top-full`}
         >
-          <ul className="menu bg-base-200 rounded-box sm:flex sm:flex-row">
+          <ul className="sm:flex sm:flex-row">
             <li>
-              <button onClick={() => navigateTo("/about")}>About</button>
+              <button className="border-[1.5px] border-black text-xl p-2 hover:bg-primary mr-2" onClick={() => navigateTo("/about")}>About</button>
             </li>
             <li>
-              <button onClick={() => navigateTo("/projects")}>Projects</button>
+              <button className="border-[1.5px] border-black text-xl p-2 hover:bg-primary mr-2" onClick={() => navigateTo("/projects")}>Projects</button>
             </li>
             <li>
-              <button onClick={() => navigateTo("/blog")}>Blog</button>
+              <button className="border-[1.5px] border-black text-xl p-2 hover:bg-primary mr-2" onClick={() => navigateTo("/blog")}>Blog</button>
             </li>
             <li>
-              <button onClick={() => navigateTo("/saccharine")}>
+              <button className="border-[1.5px] border-black text-xl p-2 hover:bg-primary mr-2" onClick={() => window.location.href ="https://www.saccharine.shop"}>
                 Saccharine
               </button>
             </li>
           </ul>
         </div>
       </div>
-      <div className="flex p-2">
-        <input
-          type="checkbox"
-          value="synthwave"
-          className="checkbox theme-controller"
-        />
-        <p>🕺</p>
-      </div>
+
     </div>
   );
 };

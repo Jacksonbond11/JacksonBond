@@ -11,8 +11,10 @@ const MainPage = () => {
         </div>
         <div className="border-black border-2 border-t-0 flex-1 flex flex-col justify-center items-center h-full">
           <p className="text-[25px] my-4 text-center">
-            Software Developer // Software Development Engineer in Test.</p>
-            <p className="text-[25px] my-4 text-center">I love to create and learn new things.
+            Software Developer // Software Development Engineer in Test.
+          </p>
+          <p className="text-[25px] my-4 text-center">
+            I love to create and learn new things.
           </p>
         </div>
       </div>
@@ -35,7 +37,9 @@ const MainPage = () => {
                   height: "100%",
                 }}
               ></div>
-              <img src="/somatika.jpg" className="w-full relative" />
+              <a href="https://somatikatattoo.infacto.digital/">
+                <img src="/somatika.jpg" className="w-full relative" />
+              </a>
             </div>
           </div>
         </div>
@@ -55,7 +59,9 @@ const MainPage = () => {
                   height: "100%",
                 }}
               ></div>
-              <img src="/saccharine.jpg" className="w-full relative" />
+              <a href="https://saccharine.shop/">
+                <img src="/saccharine.jpg" className="w-full relative" />
+              </a>
             </div>
           </div>
         </div>
@@ -71,12 +77,15 @@ const MainPage = () => {
         <div className="">
           <ul>
             <a href="https://github.com/JacksonBond11">
-              <li className="border-2 border-transparent hover:border-black hover:bg-accent">Github</li>
+              <li className="border-2 border-transparent hover:border-black hover:bg-accent">
+                Github
+              </li>
             </a>
             <a href="https://www.linkedin.com/in/jacksonbond1/">
-              <li className="border-2 border-transparent hover:border-black  hover:bg-accent">Linkedin</li>
+              <li className="border-2 border-transparent hover:border-black  hover:bg-accent">
+                Linkedin
+              </li>
             </a>
-         
           </ul>
         </div>
       </div>

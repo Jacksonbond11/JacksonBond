@@ -8,7 +8,6 @@ const Projects = () => {
   return (
     <div>
       <Header />
-      <BackgroundImage />
       <div className="m-auto max-w-7xl min-h-[90vh]">
         <div className="text-center">
           <h1 className="text-4xl my-4">Projects</h1>

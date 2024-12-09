@@ -9,19 +9,19 @@ const BlogCard = ({ title, img, link }) => {
   };
 
   return (
-    <div className="card w-96 h-96 bg-base-100 shadow-xl">
+    <div className="border-2 border-black w-96 h-96 bg-base-100">
       <figure className="px-10 pt-10">
         <img
           src={img}
           alt={title}
-          className="rounded-xl object-cover w-full h-48 cursor-pointer"
+          className="object-cover w-full h-48 cursor-pointer"
           onClick={navigateToLink}
         />
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title">{title}</h2>
         <div className="card-actions">
-          <button className="btn btn-primary" onClick={navigateToLink}>
+          <button className="border-[1.5px] border-black text-xl p-2 hover:bg-primary" onClick={navigateToLink}>
             View
           </button>
         </div>

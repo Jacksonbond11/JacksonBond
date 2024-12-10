@@ -18,7 +18,7 @@ const Header = () => {
             Jackson Bond
           </button>
           <button
-            className={`btn text-xl sm:hidden`}
+            className={`border-[1.5px] w-12 h-12 border-black text-xl sm:hidden`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             ☰
@@ -27,7 +27,7 @@ const Header = () => {
         <div
           className={`absolute z-10 sm:relative sm:block ${
             isMenuOpen ? "block" : "hidden"
-          } right-0 w-40 sm:w-auto top-full`}
+          } right-0  sm:w-auto top-full bg-base-100`}
         >
           <ul className="sm:flex sm:flex-row">
             <li>

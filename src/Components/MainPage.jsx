@@ -5,11 +5,11 @@ const MainPage = () => {
   return (
     <div>
       <Header />
-      <div className="flex justify-apart h-[50vh]">
-        <div className="flex-1 m-auto align-middle text-center">
-          <h1 className="text-[100px] my-4 font-bold flex-1">JACKSON BOND</h1>
+      <div className="flex flex-col md:flex-row justify-apart h-[50vh]">
+        <div className="flex-1 m-auto align-middle text-center items-center">
+          <h1 className="md:text-[100px] text-6xl my-4 font-bold flex-1">JACKSON BOND</h1>
         </div>
-        <div className="border-black border-2 border-t-0 flex-1 flex flex-col justify-center items-center h-full">
+        <div className="border-black border-2 md:border-t-0 flex-1 flex flex-col justify-center items-center h-full">
           <p className="text-[25px] my-4 text-center">
             Software Developer // Software Development Engineer in Test.
           </p>
@@ -23,8 +23,8 @@ const MainPage = () => {
       </div>
 
       {/* //project 1 */}
-      <div className="flex justify-apart ">
-        <div className="flex flex-col  border-black border-2 max-w-[50vw] text-center p-2 pb-6 ml-1 mr-1">
+      <div className="flex flex-col md:flex-row justify-apart ">
+        <div className="flex flex-col  border-black border-2 md:max-w-[50vw] text-center p-2 pb-6 md:ml-1 md:mr-1">
           <h1 className="text-[60px] my-4 font-bold flex-1">Somatika Tattoo</h1>
           <div className="flex justify-center ">
             <div className="relative w-3/4 group cursor-pointer">
@@ -44,7 +44,7 @@ const MainPage = () => {
           </div>
         </div>
 
-        <div className="flex flex-col  border-black border-2 max-w-[50vw] text-center p-2 pb-6 ml-1 mr-1">
+        <div className="flex flex-col  border-black border-2 md:max-w-[50vw] border-t-0 md:border-t-2 text-center p-2 pb-6 md:ml-1 md:mr-1">
           <h1 className="text-[60px] my-4 font-bold flex-1">
             saccharine streetwear
           </h1>
@@ -67,7 +67,7 @@ const MainPage = () => {
         </div>
       </div>
       <a href="/projects">
-        <div className="border-black border-2 border-t-0 ml-1 mr-1 text-center hover:bg-primary hover:cursor-pointer mb-20">
+        <div className="border-black border-2 border-t-0 md:ml-1 md:mr-1 text-center hover:bg-primary hover:cursor-pointer mb-20">
           <p className="text-[25px]">View more projects</p>
         </div>
       </a>

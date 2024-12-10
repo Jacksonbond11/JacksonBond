@@ -8,7 +8,7 @@ const AboutContent = () => {
         <div className="border-b-2 border-black border-t-0 w-full text-center">
           <h2 className="text-3xl py-12">Hi I am Jackson.</h2>
         </div>
-        <div className="flex flex-col justify-center w-9/12 p-4 h-[70vh]">
+        <div className="flex flex-col justify-center w-9/12 p-4 md:h-[70vh]">
           <p>
             Hello! I'm a software developer from Oklahoma City with a unique
             journey into the world of technology. My adventure in tech began

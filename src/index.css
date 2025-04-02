@@ -20,5 +20,30 @@
   text-align: center;
 }
 
+.markdown-post h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.markdown-post h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-post p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.markdown-post strong {
+  font-weight: bold;
+}
+
+.markdown-post em {
+  font-style: italic;
+}
 
 

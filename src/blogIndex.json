@@ -1,6 +1,8 @@
 [
   {
-    "slug": "polarIce",
-    "path": "/blog/post/polarIce"
+    "slug": "polarice",
+    "title": "Polar Ice",
+    "img": "/dark-vapor.png",
+    "path": "/blog/post/polarice"
   }
 ]

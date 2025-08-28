@@ -4,5 +4,11 @@
     "title": "Polar Ice",
     "img": "/dark-vapor.png",
     "path": "/blog/post/polarice"
+  },
+  {
+    "slug": "pointersinc",
+    "title": "Pointers in C",
+    "img": "/cPointer.png",
+    "path": "/blog/post/pointersinc"
   }
 ]

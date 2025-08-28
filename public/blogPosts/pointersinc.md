@@ -1,5 +1,3 @@
-# Pointers in C
-
 "What the heck are pointers" - me right before writing this.
 
 I am currently trying to master the language of C. I want to learn a lower level language to really grasp the concepts of programming and take a look at what is happening under the hood of high level languages. My first project was building an http server. This was going pretty well for a while, then the need to use a pointer arose and I died a little bit inside.

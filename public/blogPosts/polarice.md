@@ -3,7 +3,7 @@
 ## A Chill That Hits Different
 
 Extra Polar Ice isn’t just gum — it’s an *experience*. That first bite hits with a blast of icy mint that wakes up your taste buds and instantly refreshes your breath. Whether you're prepping for a big meeting or recovering from your third coffee of the day, this gum delivers that crisp, clean snap you didn’t know you needed.
-
+![Ice caps](/blog/polarice.jpg)
 ## Long-Lasting Flavor, No Cap
 
 One of the best things about Extra Polar Ice? The flavor **lasts**. Unlike other gums that fade into rubbery sadness after five minutes, Extra keeps its cool. It holds on through awkward silences, long drives, and even those “I should’ve brushed” moments. It's the low-effort hack for keeping your mouth in check all day.

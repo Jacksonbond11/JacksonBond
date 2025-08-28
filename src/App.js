@@ -11,11 +11,12 @@ import Audiochain from "./pages/blog/posts/Audiochain.js";
 import SelfPacedDegree from "./pages/blog/posts/SelfPacedDegree.js";
 import Stats from "./pages/Stats.js";
 import MarkdownPost from "./Components/MarkdownPost.jsx";
-
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
     <BrowserRouter>
+    <Analytics />
       <Routes>
         <Route path="/" element={<Layout />} />
         <Route index element={<Home />} />

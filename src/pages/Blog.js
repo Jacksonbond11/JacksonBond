@@ -30,7 +30,8 @@ const Blog = () => {
             link={"post/audiochain"}
             img={"/blog/blog-theaudiochain.png"}
             title={"The Audio Chain"}
-          />
+            tags={["music"]}
+            />
         </div>
 
         <div className="m-4">
@@ -40,14 +41,14 @@ const Blog = () => {
             title={
               "Earning a Bachelor's of Computer Science in a Self Paced Program"
             }
+            tags={["education"]}
           />
         </div>
 
         {blogIndex.map((post) => {
-          console.log(post);
           return (
             <div className="m-4" key={post.slug}>
-              <BlogCard link={post.path} img={post.img} title={post.title} />
+              <BlogCard link={post.path} img={post.img} title={post.title} tags={post.tags} />
             </div>
           );
         })}

@@ -12,6 +12,9 @@ import SelfPacedDegree from "./pages/blog/posts/SelfPacedDegree.js";
 import Stats from "./pages/Stats.js";
 import MarkdownPost from "./Components/MarkdownPost.jsx";
 import { Analytics } from "@vercel/analytics/react"
+import Admin from "./pages/Admin.js";
+import Login from "./pages/Login.js";
+import PrivateRoute from "./Components/PrivateRoute.js";
 
 function App() {
   return (
@@ -29,6 +32,10 @@ function App() {
         <Route path="blog/post/selfpaceddegree" element={<SelfPacedDegree />} />
         <Route path="stats" element={<Stats />} />
         <Route path="blog/post/:slug" element={<MarkdownPost />} />
+        <Route path="login" element={<Login />} />
+        <Route path="admin" element={<PrivateRoute />}>
+          <Route index element={<Admin />} />
+        </Route>
         <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>

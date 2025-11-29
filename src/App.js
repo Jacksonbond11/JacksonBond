@@ -10,6 +10,9 @@ import Saccharine from "./pages/Saccharine.js";
 import Audiochain from "./pages/blog/posts/Audiochain.js";
 import SelfPacedDegree from "./pages/blog/posts/SelfPacedDegree.js";
 import Stats from "./pages/Stats.js";
+import Admin from "./pages/Admin.js";
+import Login from "./pages/Login.js";
+import PrivateRoute from "./Components/PrivateRoute.js";
 
 function App() {
   return (
@@ -25,6 +28,10 @@ function App() {
         <Route path="blog/post/audiochain" element={<Audiochain />} />
         <Route path="blog/post/selfpaceddegree" element={<SelfPacedDegree />} />
         <Route path="stats" element={<Stats />} />
+        <Route path="login" element={<Login />} />
+        <Route path="admin" element={<PrivateRoute />}>
+          <Route index element={<Admin />} />
+        </Route>
         <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>

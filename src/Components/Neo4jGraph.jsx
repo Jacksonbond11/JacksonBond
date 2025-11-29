@@ -38,7 +38,7 @@ const Neo4jGraph = () => {
     return () => window.removeEventListener("resize", updateGraphDimensions);
   }, [selectedNode]);
 
-  const handleNodeClick = (node) =>{console.log("clicked node"); setSelectedNode(node);}
+  const handleNodeClick = (node) => { console.log("clicked node: ", selectedNode); setSelectedNode(node); }
   const handleBackgroundClick = () => setSelectedNode(null);
 
   const handleUpdateRelationship = async (relationship, newTargetId) => {
@@ -75,7 +75,12 @@ const Neo4jGraph = () => {
   return (
     <div className="w-full h-[800px] flex flex-col border border-gray-300 relative overflow-hidden">
       {/* GRAPH */}
-      <div ref={graphContainerRef} className="flex-1 bg-white">
+      <div
+        ref={graphContainerRef}
+        className="bg-white"
+        style={{ height: "400px", width: "100%" }}
+      >
+
         <ForceGraph2D
           width={graphWidth}
           height={graphHeight}
@@ -127,8 +132,8 @@ const Neo4jGraph = () => {
       </div>
 
       {/* SIDEBAR */}
-      {selectedNode && (
-        <div className="w-[320px] z-20 relative bg-gray-50 border-l border-gray-300 p-4 overflow-y-auto shadow-inner">
+      {selectedNode && selectedNode.labels.includes("Task") && (
+        <div className=" z-20 relative bg-gray-50 border-l border-gray-300 p-4 overflow-y-auto shadow-inner">
           <h2 className="text-xl font-semibold mb-4">Node Details</h2>
 
           <div className="mb-4">
@@ -165,7 +170,6 @@ const Neo4jGraph = () => {
           </div>
 
           <div>
-            <h3 className="font-medium text-gray-700 mb-1">Relationships</h3>
             {data.links
               .filter((l) => l.source && l.source.id === selectedNode.id)
               .map((l, i) => (

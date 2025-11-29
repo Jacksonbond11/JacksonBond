@@ -1,87 +1,33 @@
 import React, { useEffect, useState, useRef } from "react";
-import neo4j from "neo4j-driver";
 import ForceGraph2D from "react-force-graph-2d";
 import RelationshipEditor from "./RelationshipEditor.jsx";
 
 const Neo4jGraph = () => {
   const [data, setData] = useState({ nodes: [], links: [] });
   const [selectedNode, setSelectedNode] = useState(null);
-  const driverRef = useRef(null);
 
   const graphContainerRef = useRef(null);
   const [graphWidth, setGraphWidth] = useState(0);
   const [graphHeight, setGraphHeight] = useState(0);
 
   const fetchData = async () => {
-    const session = driverRef.current.session();
     try {
-      const result = await session.run(`
-        MATCH (n)-[r]->(m)
-        RETURN n, labels(n) AS nLabels,
-               r, type(r) AS rType,
-               m, labels(m) AS mLabels
-      `);
-
-      const nodes = new Map();
-      const links = [];
-
-      result.records.forEach((record) => {
-        const n = record.get("n");
-        const m = record.get("m");
-
-        const nLabels = record.get("nLabels");
-        const mLabels = record.get("mLabels");
-        const rType = record.get("rType");
-
-        nodes.set(n.identity.toString(), {
-          id: n.identity.toString(),
-          labels: nLabels,
-          ...n.properties,
-        });
-
-        nodes.set(m.identity.toString(), {
-          id: m.identity.toString(),
-          labels: mLabels,
-          ...m.properties,
-        });
-
-        links.push({
-          source: n.identity.toString(),
-          target: m.identity.toString(),
-          label: rType,
-        });
-      });
-
-      const populatedLinks = links.map((link) => ({
-        ...link,
-        source: nodes.get(link.source),
-        target: nodes.get(link.target),
-      }));
-
-      setData({ nodes: Array.from(nodes.values()), links: populatedLinks });
+      const res = await fetch("/api/graph");
+      const json = await res.json();
+      setData(json);
     } catch (err) {
-      console.error(err);
-    } finally {
-      session.close();
+      console.error("Error fetching graph data:", err);
     }
   };
 
   useEffect(() => {
-    const uri = "bolt://147.182.193.131:7687";
-    const user = "";
-    const password = "";
-
-    driverRef.current = neo4j.driver(uri, neo4j.auth.basic(user, password));
-
     fetchData();
-
-    return () => driverRef.current?.close();
   }, []);
 
   useEffect(() => {
     const updateGraphDimensions = () => {
       if (graphContainerRef.current) {
-        setGraphWidth(graphContainerRef.current.offsetWidth / 2);
+        setGraphWidth(graphContainerRef.current.offsetWidth);
         setGraphHeight(graphContainerRef.current.offsetHeight);
       }
     };
@@ -90,66 +36,46 @@ const Neo4jGraph = () => {
     window.addEventListener("resize", updateGraphDimensions);
 
     return () => window.removeEventListener("resize", updateGraphDimensions);
-  }, [selectedNode]); // Re-measure when sidebar visibility changes
+  }, [selectedNode]);
 
-  const handleNodeClick = (node) => {
-    setSelectedNode(node);
-  };
-
-  const handleBackgroundClick = () => {
-    setSelectedNode(null);
-  };
+  const handleNodeClick = (node) =>{console.log("clicked node"); setSelectedNode(node);}
+  const handleBackgroundClick = () => setSelectedNode(null);
 
   const handleUpdateRelationship = async (relationship, newTargetId) => {
-    const session = driverRef.current.session();
     try {
-      // The relationship object from react-force-graph might have circular references.
-      // We should only use the IDs.
       const sourceId =
         typeof relationship.source === "object"
           ? relationship.source.id
           : relationship.source;
+
       const oldTargetId =
         typeof relationship.target === "object"
           ? relationship.target.id
           : relationship.target;
 
-      await session.run(
-        `
-        MATCH (a)-[r]->(b)
-        WHERE id(a) = $sourceId AND id(b) = $oldTargetId AND type(r) = $relType
-        DELETE r
-        WITH a
-        MATCH (c)
-        WHERE id(c) = $newTargetId
-        CREATE (a)-[new_r:\`${relationship.label}\`]->(c)
-        `,
-        {
+      await fetch("/api/update-relationship", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
           sourceId: parseInt(sourceId),
           oldTargetId: parseInt(oldTargetId),
           newTargetId: parseInt(newTargetId),
           relType: relationship.label,
-        }
-      );
+        }),
+      });
+
       fetchData();
     } catch (error) {
       console.error("Error updating relationship:", error);
-    } finally {
-      session.close();
     }
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        height: "800px",
-        border: "1px solid #ccc",
-        position: "relative",
-      }}
-    >
-      {/* ------- GRAPH ------- */}
-      <div ref={graphContainerRef} style={{ flex: 1 }}>
+    <div className="w-full h-[800px] flex flex-col border border-gray-300 relative overflow-hidden">
+      {/* GRAPH */}
+      <div ref={graphContainerRef} className="flex-1 bg-white">
         <ForceGraph2D
           width={graphWidth}
           height={graphHeight}
@@ -157,32 +83,28 @@ const Neo4jGraph = () => {
           onNodeClick={handleNodeClick}
           onBackgroundClick={handleBackgroundClick}
           nodeAutoColorBy={(node) => node.labels?.[0] || "unknown"}
-          cooldownTime={2000}
-          d3VelocityDecay={0.3}
+          cooldownTime={1500}
+          d3VelocityDecay={0.28}
           nodeCanvasObject={(node, ctx, globalScale) => {
-            const label =
-              node.name || node.description || node.labels?.[0] || node.id;
+            const label = node.name || node.description || node.labels?.[0] || node.id;
+            const radius = 14 / globalScale;
 
-            const radius = 6 / globalScale;
-
-            // Draw circle
             ctx.beginPath();
-            ctx.arc(node.x, node.y, radius, 0, 2 * Math.PI, false);
-            ctx.fillStyle = node.color || "steelblue";
+            ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
+            ctx.fillStyle = node.color || "#4f83ff";
             ctx.fill();
 
-            // Label
             const fontSize = 12 / globalScale;
-            ctx.font = `${fontSize}px Sans-Serif`;
+            ctx.font = `${fontSize}px Inter, sans-serif`;
             ctx.textAlign = "left";
             ctx.textBaseline = "middle";
-            ctx.fillStyle = "black";
+            ctx.fillStyle = "#111";
             ctx.fillText(label, node.x + radius + 4, node.y);
           }}
           nodePointerAreaPaint={(node, color, ctx) => {
             ctx.fillStyle = color;
             ctx.beginPath();
-            ctx.arc(node.x, node.y, 10, 0, 2 * Math.PI, false);
+            ctx.arc(node.x, node.y, 10, 0, Math.PI * 2);
             ctx.fill();
           }}
           linkCanvasObjectMode={() => "after"}
@@ -197,63 +119,64 @@ const Neo4jGraph = () => {
             const y = (start.y + end.y) / 2;
 
             const fontSize = 10 / globalScale;
-            ctx.font = `${fontSize}px Sans-Serif`;
-            ctx.fillStyle = "gray";
+            ctx.font = `${fontSize}px Inter, sans-serif`;
+            ctx.fillStyle = "#555";
             ctx.fillText(label, x, y);
           }}
         />
       </div>
 
-      {/* ------- SIDEBAR ------- */}
+      {/* SIDEBAR */}
       {selectedNode && (
-        <div
-          style={{
-            width: "300px",
-            background: "#f7f7f7",
-            borderLeft: "1px solid #ccc",
-            padding: "16px",
-            overflowY: "auto",
-          }}
-        >
-          <h2 style={{ marginTop: 0 }}>Node Details</h2>
+        <div className="w-[320px] z-20 relative bg-gray-50 border-l border-gray-300 p-4 overflow-y-auto shadow-inner">
+          <h2 className="text-xl font-semibold mb-4">Node Details</h2>
 
-          <h3>Type</h3>
-          <div>{selectedNode.labels?.join(", ")}</div>
+          <div className="mb-4">
+            <h3 className="font-medium text-gray-700">Type</h3>
+            <div className="text-gray-900">{selectedNode.labels?.join(", ")}</div>
+          </div>
 
-          <h3 style={{ marginTop: "16px" }}>Properties</h3>
-          {Object.entries(selectedNode)
-            .filter(
-              ([key]) =>
-                ![
-                  "x",
-                  "y",
-                  "vx",
-                  "vy",
-                  "fx",
-                  "fy",
-                  "color",
-                  "labels",
-                  "index",
-                  "__indexColor",
-                ].includes(key)
-            )
-            .map(([key, value]) => (
-              <div key={key} style={{ marginBottom: "6px" }}>
-                <strong>{key}:</strong> {String(value)}
-              </div>
-            ))}
+          <div className="mb-4">
+            <h3 className="font-medium text-gray-700 mb-1">Properties</h3>
+            <div className="space-y-1">
+              {Object.entries(selectedNode)
+                .filter(
+                  ([key]) =>
+                    ![
+                      "x",
+                      "y",
+                      "vx",
+                      "vy",
+                      "fx",
+                      "fy",
+                      "color",
+                      "labels",
+                      "index",
+                      "__indexColor",
+                    ].includes(key)
+                )
+                .map(([key, value]) => (
+                  <div key={key} className="text-sm">
+                    <strong className="text-gray-800">{key}:</strong>{" "}
+                    <span className="text-gray-600">{String(value)}</span>
+                  </div>
+                ))}
+            </div>
+          </div>
 
-          <h3 style={{ marginTop: "16px" }}>Relationships</h3>
-          {data.links
-            .filter((l) => l.source && l.source.id === selectedNode.id)
-            .map((l, i) => (
-              <RelationshipEditor
-                key={i}
-                relationship={l}
-                allNodes={data.nodes}
-                onUpdate={handleUpdateRelationship}
-              />
-            ))}
+          <div>
+            <h3 className="font-medium text-gray-700 mb-1">Relationships</h3>
+            {data.links
+              .filter((l) => l.source && l.source.id === selectedNode.id)
+              .map((l, i) => (
+                <RelationshipEditor
+                  key={i}
+                  relationship={l}
+                  allNodes={data.nodes}
+                  onUpdate={handleUpdateRelationship}
+                />
+              ))}
+          </div>
         </div>
       )}
     </div>

@@ -11,21 +11,24 @@ const MainPage = () => {
         </div>
         <div className="border-black border-2 md:border-t-0 flex-1 flex flex-col justify-center items-center h-full">
           <p className="text-[25px] my-4 text-center">
-            Software Developer // Software Development Engineer in Test.
+            Software developer and SDET focused on React, automation, and production web apps.
           </p>
           <p className="text-[25px] my-4 text-center">
-            I love to create and learn new things.
+            I build tested, usable software from ambiguous ideas to shipped products.
           </p>
         </div>
       </div>
       <div className=" flex justify-center m-6">
-        <h2 className=" text-3xl">Some of my projects</h2>
+        <h2 className=" text-3xl">Featured projects</h2>
       </div>
 
       {/* //project 1 */}
       <div className="flex flex-col md:flex-row justify-apart ">
         <div className="flex flex-col  border-black border-2 md:max-w-[50vw] text-center p-2 pb-6 md:ml-1 md:mr-1">
           <h1 className="text-[60px] my-4 font-bold flex-1">Trisha Gonzalez Barber</h1>
+          <p className="text-lg px-4 pb-4">
+            Local-service marketing site built for booking conversion, performance, and search visibility.
+          </p>
           <div className="flex justify-center ">
             <div className="relative w-3/4 group cursor-pointer">
               <div
@@ -52,6 +55,9 @@ const MainPage = () => {
           <h1 className="text-[60px] my-4 font-bold flex-1">
             Space Economy
           </h1>
+          <p className="text-lg px-4 pb-4">
+            Market research app that organizes space companies, sectors, quotes, and industry news.
+          </p>
           <div className="flex justify-center ">
             <div className="relative w-3/4 group cursor-pointer">
               <div

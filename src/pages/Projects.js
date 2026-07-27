@@ -18,7 +18,12 @@ const Projects = () => {
               }
               img={"/projects/trisha-cover.jpg"}
               link={"https://trishathebarber.com/"}
+              codeLink={"https://github.com/Jacksonbond11/trisha"}
               skills={["React"]}
+              highlights={[
+                "Built a conversion-focused marketing site for a local service business.",
+                "Added structured local SEO content, metadata, and booking paths.",
+              ]}
             />
             <ProjectCard
               title={"Old Man Pham's Lawn Care"}
@@ -27,7 +32,12 @@ const Projects = () => {
               }
               img={"/projects/oldmanphams.jpg"}
               link={"https://www.oldmanphamslawncare.com/"}
+              codeLink={"https://github.com/Jacksonbond11/OldManPhams"}
               skills={["React"]}
+              highlights={[
+                "Created service-area pages for multiple OKC metro locations.",
+                "Balanced business copy, gallery content, and contact flows for lead generation.",
+              ]}
             />
             <ProjectCard
               title={"Space Economy"}
@@ -36,7 +46,12 @@ const Projects = () => {
               }
               img={"/projects/spaceeconomy.png"}
               link={"https://spaceeconomy.app/"}
+              codeLink={"https://github.com/Jacksonbond11/SpaceEconomy"}
               skills={["React", "NodeJS", "Postgresql"]}
+              highlights={[
+                "Built a market research app for public space companies and sectors.",
+                "Combined company profiles, quote data, and news into one searchable interface.",
+              ]}
             />
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 
 const DiaperCard = ({
   imgSrc,
@@ -20,7 +20,7 @@ const DiaperCard = ({
     setQuantity(e.target.value);
   };
 
-  const fetchCurrentQuantity = async () => {
+  const fetchCurrentQuantity = useCallback(async () => {
     try {
       const response = await fetch(
         `https://api.vegainrecipes.com:3001/api/diapers/${title}/quantity`
@@ -31,11 +31,11 @@ const DiaperCard = ({
     } catch (error) {
       console.error("Error fetching current quantity:", error);
     }
-  };
+  }, [startingTotal, title]);
 
   useEffect(() => {
     fetchCurrentQuantity();
-  }, []);
+  }, [fetchCurrentQuantity]);
 
   const handleSubmit = async () => {
     const endpoint =

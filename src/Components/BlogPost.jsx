@@ -15,10 +15,10 @@ const BlogPost = ({ title, body }) => {
       <div className="text-sm breadcrumbs p-4">
         <ul>
           <li onClick={navigateHome}>
-            <a>Home</a>
+            <button type="button">Home</button>
           </li>
           <li onClick={navigateBlog}>
-            <a>Blog</a>
+            <button type="button">Blog</button>
           </li>
           <li>{title}</li>
         </ul>

@@ -11,16 +11,12 @@ function MarkdownPost() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    handleSetPost();
+    setPost(blogIndex.find((p) => p.slug === slug));
     fetch(`/blogPosts/${slug}.md`)
       .then((res) => res.text())
       .then(setContent);
   }, [slug]);
 
-  const handleSetPost = () => {
-    setPost(blogIndex.find((p) => p.slug == slug));
-    console.log(blogIndex.find((p) => p.slug == slug))
-  };
   const navigateHome = () => {
     navigate("/");
   };
@@ -34,10 +30,10 @@ function MarkdownPost() {
       <div className="text-sm breadcrumbs p-4">
         <ul>
           <li onClick={navigateHome}>
-            <a>Home</a>
+            <button type="button">Home</button>
           </li>
           <li onClick={navigateBlog}>
-            <a>Blog</a>
+            <button type="button">Blog</button>
           </li>
           <li>{post && post.title}</li>
         </ul>

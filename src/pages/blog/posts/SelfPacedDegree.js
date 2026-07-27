@@ -1,7 +1,6 @@
 import React from "react";
 import BlogPost from "../../../Components/BlogPost";
 import Header from "../../../Components/Header";
-import Footer from "../../../Components/Footer";
 
 const SelfPacedDegree = () => {
   return (

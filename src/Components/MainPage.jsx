@@ -5,11 +5,11 @@ const MainPage = () => {
   return (
     <div>
       <Header />
-      <div className="flex flex-col md:flex-row justify-apart h-[50vh]">
+      <div className="flex flex-col md:flex-row justify-apart md:h-[50vh]">
         <div className="flex-1 m-auto align-middle text-center items-center">
           <h1 className="md:text-[100px] text-6xl my-4 font-bold flex-1">JACKSON BOND</h1>
         </div>
-        <div className="border-black border-2 md:border-t-0 flex-1 flex flex-col justify-center items-center h-full">
+        <div className="border-black border-2 md:border-t-0 flex-1 flex flex-col justify-center items-center min-h-64 md:h-full px-4 py-8">
           <p className="text-[25px] my-4 text-center">
             Software developer and SDET focused on React, automation, and production web apps.
           </p>
@@ -18,13 +18,13 @@ const MainPage = () => {
           </p>
         </div>
       </div>
-      <div className=" flex justify-center m-6">
+      <div className=" flex justify-center m-6 mt-10">
         <h2 className=" text-3xl">Featured projects</h2>
       </div>
 
       {/* //project 1 */}
-      <div className="flex flex-col md:flex-row justify-apart ">
-        <div className="flex flex-col  border-black border-2 md:max-w-[50vw] text-center p-2 pb-6 md:ml-1 md:mr-1">
+      <div className="flex flex-col md:flex-row justify-apart">
+        <div className="flex flex-col border-black border-2 md:max-w-[50vw] text-center p-2 pb-6 md:ml-1 md:mr-1">
           <h1 className="text-[60px] my-4 font-bold flex-1">Trisha Gonzalez Barber</h1>
           <p className="text-lg px-4 pb-4">
             Local-service marketing site built for booking conversion, performance, and search visibility.

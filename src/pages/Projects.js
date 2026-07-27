@@ -10,7 +10,7 @@ const Projects = () => {
       <div className="m-auto max-w-7xl min-h-[90vh]">
         <div className="text-center">
           <h1 className="text-4xl my-4">Projects</h1>
-          <div className="md:flex md:p-8 items-center justify-between p-2 m-auto">
+          <div className="flex flex-col md:flex-row md:p-8 items-center justify-between gap-4 px-4 py-2 m-auto">
             <ProjectCard
               title={"Trisha Gonzalez Barber"}
               description={

@@ -26,7 +26,7 @@ const ProjectCard = ({
   };
 
   return (
-    <div className="border-2 border-black w-96 bg-base-100 min-h-[70vh] mb-2">
+    <div className="border-2 border-black w-full max-w-96 bg-base-100 min-h-[70vh] mb-2">
       <figure className="px-10 pt-10">
         <img
           src={img}

@@ -41,7 +41,7 @@ const MainPage = () => {
                 <img
                   src="/projects/trisha-cover.jpg"
                   alt="Trisha Gonzalez Barber website preview"
-                  className="w-full relative"
+                  className="w-full h-72 object-contain bg-white relative"
                 />
               </a>
             </div>
@@ -67,7 +67,7 @@ const MainPage = () => {
                 <img
                   src="/projects/oldmanphams.jpg"
                   alt="Old Man Pham's Lawn Care website preview"
-                  className="w-full relative"
+                  className="w-full h-72 object-contain bg-white relative"
                 />
               </a>
             </div>

@@ -39,11 +39,6 @@ const Header = () => {
             <li>
               <button className="border-[1.5px] border-black text-xl p-2 hover:bg-primary mr-2" onClick={() => navigateTo("/blog")}>Blog</button>
             </li>
-            <li>
-              <button className="border-[1.5px] border-black text-xl p-2 hover:bg-primary mr-2" onClick={() => window.location.href ="https://spaceeconomy.app/"}>
-                Space Economy
-              </button>
-            </li>
           </ul>
         </div>
       </div>

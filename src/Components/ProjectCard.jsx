@@ -19,7 +19,7 @@ const ProjectCard = ({ title, description, img, link, skills }) => {
         <img
           src={img}
           alt={title}
-          className=" object-cover w-full h-48 cursor-pointer"
+          className="object-contain w-full h-48 cursor-pointer bg-white border border-black"
           onClick={navigate}
         />
       </figure>

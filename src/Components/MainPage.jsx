@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import Header from "../Components/Header";
 
 const MainPage = () => {
@@ -25,7 +25,7 @@ const MainPage = () => {
       {/* //project 1 */}
       <div className="flex flex-col md:flex-row justify-apart ">
         <div className="flex flex-col  border-black border-2 md:max-w-[50vw] text-center p-2 pb-6 md:ml-1 md:mr-1">
-          <h1 className="text-[60px] my-4 font-bold flex-1">Somatika Tattoo</h1>
+          <h1 className="text-[60px] my-4 font-bold flex-1">Trisha Gonzalez Barber</h1>
           <div className="flex justify-center ">
             <div className="relative w-3/4 group cursor-pointer">
               <div
@@ -37,8 +37,12 @@ const MainPage = () => {
                   height: "100%",
                 }}
               ></div>
-              <a href="https://somatikatattoo.infacto.digital/">
-                <img src="/somatika.jpg" className="w-full relative" />
+              <a href="https://trishathebarber.com/">
+                <img
+                  src="/projects/trisha-cover.jpg"
+                  alt="Trisha Gonzalez Barber website preview"
+                  className="w-full relative"
+                />
               </a>
             </div>
           </div>
@@ -46,7 +50,7 @@ const MainPage = () => {
 
         <div className="flex flex-col  border-black border-2 md:max-w-[50vw] border-t-0 md:border-t-2 text-center p-2 pb-6 md:ml-1 md:mr-1">
           <h1 className="text-[60px] my-4 font-bold flex-1">
-            saccharine streetwear
+            Old Man Pham's Lawn Care
           </h1>
           <div className="flex justify-center ">
             <div className="relative w-3/4 group cursor-pointer">
@@ -59,8 +63,12 @@ const MainPage = () => {
                   height: "100%",
                 }}
               ></div>
-              <a href="https://saccharine.shop/">
-                <img src="/saccharine.jpg" className="w-full relative" />
+              <a href="https://www.oldmanphamslawncare.com/">
+                <img
+                  src="/projects/oldmanphams.jpg"
+                  alt="Old Man Pham's Lawn Care website preview"
+                  className="w-full relative"
+                />
               </a>
             </div>
           </div>

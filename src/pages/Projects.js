@@ -2,7 +2,6 @@ import React from "react";
 import Header from "../Components/Header";
 import ProjectCard from "../Components/ProjectCard";
 import Footer from "../Components/Footer";
-import BackgroundImage from "../Components/BackgroundImage";
 
 const Projects = () => {
   return (
@@ -13,29 +12,31 @@ const Projects = () => {
           <h1 className="text-4xl my-4">Projects</h1>
           <div className="md:flex md:p-8 items-center justify-between p-2 m-auto">
             <ProjectCard
-              title={"Vegain Recipes"}
+              title={"Trisha Gonzalez Barber"}
               description={
-                "AI powered vegan recipes provided without the fluff. You shouldn't need to read a life story to view a recipe."
+                "A polished local-service marketing site for an Oklahoma City barber, built around booking conversion and strong local SEO."
               }
-              img={"/projects/vegainrecipes.png"}
-              link={"https://www.vegainrecipes.com"}
-              skills={["NodeJS", "React", "Postgresql"]}
+              img={"/projects/trisha-cover.jpg"}
+              link={"https://trishathebarber.com/"}
+              skills={["React"]}
             />
             <ProjectCard
-              title={"Botify"}
+              title={"Old Man Pham's Lawn Care"}
               description={
-                "Discord bot to add songs to a Spotify playlist automatically."
+                "A service-area focused website for an OKC metro lawn care business, with location pages and search-friendly content."
               }
-              img={"/projects/botify.png"}
-              link={"https://github.com/Jacksonbond11/Botify"}
-              skills={["NodeJS"]}
+              img={"/projects/oldmanphams.jpg"}
+              link={"https://www.oldmanphamslawncare.com/"}
+              skills={["React"]}
             />
             <ProjectCard
-              title={"NWA Mold"}
-              description={"A business site for NWA Mold."}
-              img={"/projects/nwamold.png"}
-              link={"https://www.nwamoldinspector.com/"}
-              skills={["PHP", "Laravel"]}
+              title={"Space Economy"}
+              description={
+                "A market research app for public space companies, combining company profiles, quotes, and industry news."
+              }
+              img={"/projects/spaceeconomy.png"}
+              link={"https://spaceeconomy.app/"}
+              skills={["React", "NodeJS", "Postgresql"]}
             />
           </div>
         </div>

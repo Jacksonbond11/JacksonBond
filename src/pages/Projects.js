@@ -39,20 +39,6 @@ const Projects = () => {
                 "Balanced business copy, gallery content, and contact flows for lead generation.",
               ]}
             />
-            <ProjectCard
-              title={"Space Economy"}
-              description={
-                "A market research app for public space companies, combining company profiles, quotes, and industry news."
-              }
-              img={"/projects/spaceeconomy.png"}
-              link={"https://spaceeconomy.app/"}
-              codeLink={"https://github.com/Jacksonbond11/SpaceEconomy"}
-              skills={["React", "NodeJS", "Postgresql"]}
-              highlights={[
-                "Built a market research app for public space companies and sectors.",
-                "Combined company profiles, quote data, and news into one searchable interface.",
-              ]}
-            />
           </div>
         </div>
       </div>

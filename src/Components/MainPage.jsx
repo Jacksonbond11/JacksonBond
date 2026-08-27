@@ -53,10 +53,10 @@ const MainPage = () => {
 
         <div className="flex flex-col  border-black border-2 md:max-w-[50vw] border-t-0 md:border-t-2 text-center p-2 pb-6 md:ml-1 md:mr-1">
           <h1 className="text-[60px] my-4 font-bold flex-1">
-            Space Economy
+            Old Man Pham's Lawn Care
           </h1>
           <p className="text-lg px-4 pb-4">
-            Market research app that organizes space companies, sectors, quotes, and industry news.
+            Service-area website for an OKC metro lawn care business, built to turn local search traffic into leads.
           </p>
           <div className="flex justify-center ">
             <div className="relative w-3/4 group cursor-pointer">
@@ -69,10 +69,10 @@ const MainPage = () => {
                   height: "100%",
                 }}
               ></div>
-              <a href="https://spaceeconomy.app/">
+              <a href="https://www.oldmanphamslawncare.com/">
                 <img
-                  src="/projects/spaceeconomy.png"
-                  alt="Space Economy app preview"
+                  src="/projects/oldmanphams.jpg"
+                  alt="Old Man Pham's Lawn Care website preview"
                   className="w-full h-72 object-contain bg-white border-2 border-black relative"
                 />
               </a>

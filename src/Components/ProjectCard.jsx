@@ -20,8 +20,14 @@ const ProjectCard = ({
   return (
     <div className="border-2 border-black w-full max-w-96 bg-base-100 min-h-[70vh] mb-2">
       <figure className="px-10 pt-10">
-        <a href={link} target="_blank" rel="noreferrer">
-          <img src={img} alt={`${title} preview`} className="object-contain w-full h-48 bg-white border-2 border-black" />
+        <a href={link} target="_blank" rel="noreferrer" aria-label={`Visit ${title}`}>
+          {img ? (
+            <img src={img} alt={`${title} preview`} className="object-contain w-full h-48 bg-white border-2 border-black" />
+          ) : (
+            <div className="w-full h-48 border-2 border-black bg-primary flex items-center justify-center p-6">
+              <span className="text-4xl font-bold tracking-tight">{title}</span>
+            </div>
+          )}
         </a>
       </figure>
       <div className="card-body items-center text-center">

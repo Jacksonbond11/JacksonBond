@@ -7,7 +7,7 @@ const Projects = () => {
       <div className="m-auto max-w-7xl min-h-[90vh]">
         <div className="text-center">
           <h1 className="text-4xl my-4">Projects</h1>
-          <div className="flex flex-col md:flex-row md:p-8 items-center justify-between gap-4 px-4 py-2 m-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 md:p-8 items-stretch gap-4 px-4 py-2 m-auto">
             <ProjectCard
               title={"Trisha Gonzalez Barber"}
               description={
@@ -21,6 +21,15 @@ const Projects = () => {
                 "Built a conversion-focused marketing site for a local service business.",
                 "Added structured local SEO content, metadata, and booking paths.",
               ]}
+            />
+            <ProjectCard
+              title={"TaffyStack"}
+              description={
+                "A playful, polished web experience built to make the TaffyStack brand easy to explore."
+              }
+              link={"https://taffystack.com/"}
+              skills={["Web design"]}
+              highlights={["Designed as a responsive public-facing experience."]}
             />
             <ProjectCard
               title={"Old Man Pham's Lawn Care"}

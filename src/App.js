@@ -21,22 +21,23 @@ function App() {
     <BrowserRouter>
     <Analytics />
       <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route index element={<Home />} />
-        <Route path="projects" element={<Projects />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="about" element={<About />} />
-        <Route path="diapers" element={<Diapers />} />
-        <Route path="saccharine" element={<Saccharine />} />
-        <Route path="blog/post/audiochain" element={<Audiochain />} />
-        <Route path="blog/post/selfpaceddegree" element={<SelfPacedDegree />} />
-        <Route path="stats" element={<Stats />} />
-        <Route path="blog/post/:slug" element={<MarkdownPost />} />
-        <Route path="login" element={<Login />} />
-        <Route path="admin" element={<PrivateRoute />}>
-          <Route index element={<Admin />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="about" element={<About />} />
+          <Route path="diapers" element={<Diapers />} />
+          <Route path="saccharine" element={<Saccharine />} />
+          <Route path="blog/post/audiochain" element={<Audiochain />} />
+          <Route path="blog/post/selfpaceddegree" element={<SelfPacedDegree />} />
+          <Route path="stats" element={<Stats />} />
+          <Route path="blog/post/:slug" element={<MarkdownPost />} />
+          <Route path="login" element={<Login />} />
+          <Route path="admin" element={<PrivateRoute />}>
+            <Route index element={<Admin />} />
+          </Route>
+          <Route path="*" element={<NoPage />} />
         </Route>
-        <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
   );

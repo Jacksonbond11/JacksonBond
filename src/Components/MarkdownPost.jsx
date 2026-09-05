@@ -1,7 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown"; // optional
-import Header from "./Header";
 import blogIndex from "../blogIndex.json";
 
 function MarkdownPost() {
@@ -26,7 +25,6 @@ function MarkdownPost() {
 
   return (
     <div className="markdown-post">
-      <Header />
       <div className="text-sm breadcrumbs p-4">
         <ul>
           <li onClick={navigateHome}>

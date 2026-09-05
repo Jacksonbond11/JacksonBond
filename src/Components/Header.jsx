@@ -1,26 +1,19 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navigate = useNavigate();
-
-  const navigateTo = (path) => {
-    navigate(path);
-    setIsMenuOpen(false);
-  };
 
   return (
     <div>
       <div className="navbar relative border-b-2 border-black">
         <div className="flex-1 flex justify-between items-center">
-          <button
+          <Link
+            to="/"
             className="border-[1.5px] border-black text-xl p-2 hover:bg-primary"
-            onClick={() => navigateTo("/")}
           >
             Jackson Bond
-          </button>
+          </Link>
           <button
             className="border-[1.5px] w-12 h-12 border-black text-xs sm:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -35,28 +28,31 @@ const Header = () => {
         >
           <ul className="sm:flex sm:flex-row">
             <li>
-              <button
+              <Link
+                to="/about"
                 className="border-[1.5px] border-black text-xl p-2 hover:bg-primary mr-2"
-                onClick={() => navigateTo("/about")}
+                onClick={() => setIsMenuOpen(false)}
               >
                 About
-              </button>
+              </Link>
             </li>
             <li>
-              <button
+              <Link
+                to="/projects"
                 className="border-[1.5px] border-black text-xl p-2 hover:bg-primary mr-2"
-                onClick={() => navigateTo("/projects")}
+                onClick={() => setIsMenuOpen(false)}
               >
                 Projects
-              </button>
+              </Link>
             </li>
             <li>
-              <button
+              <Link
+                to="/blog"
                 className="border-[1.5px] border-black text-xl p-2 hover:bg-primary mr-2"
-                onClick={() => navigateTo("/blog")}
+                onClick={() => setIsMenuOpen(false)}
               >
                 Blog
-              </button>
+              </Link>
             </li>
           </ul>
         </div>

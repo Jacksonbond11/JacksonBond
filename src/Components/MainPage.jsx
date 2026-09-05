@@ -1,11 +1,10 @@
 import React from "react";
-import Header from "../Components/Header";
+import { Link } from "react-router-dom";
 
 const MainPage = () => {
   return (
     <div>
-      <Header />
-      <div className="flex flex-col md:flex-row justify-apart md:h-[50vh]">
+      <section className="flex flex-col md:flex-row md:min-h-[50vh]">
         <div className="flex-1 m-auto align-middle text-center items-center">
           <h1 className="md:text-[100px] text-6xl my-4 font-bold flex-1">JACKSON BOND</h1>
         </div>
@@ -17,7 +16,7 @@ const MainPage = () => {
             I build tested, usable software from ambiguous ideas to shipped products.
           </p>
         </div>
-      </div>
+      </section>
       <div className=" flex justify-center m-6 mt-10">
         <h2 className=" text-3xl">Featured projects</h2>
       </div>
@@ -52,11 +51,11 @@ const MainPage = () => {
         </div>
 
       </div>
-      <a href="/projects">
+      <Link to="/projects">
         <div className="border-black border-2 border-t-0 md:ml-1 md:mr-1 text-center hover:bg-primary hover:cursor-pointer mb-20">
           <p className="text-[25px]">View more projects</p>
         </div>
-      </a>
+      </Link>
 
       <div className="text-center m-6 align-middle">
         <h2 className=" text-3xl">Some of my links</h2>

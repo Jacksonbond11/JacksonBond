@@ -19,7 +19,7 @@ const Footer = () => {
           </a>
         </nav>
         <aside>
-          <p>Copyright © 2024 - Jackson Bond</p>
+          <p>Copyright © {new Date().getFullYear()} - Jackson Bond</p>
         </aside>
       </footer>
     </div>

@@ -9,31 +9,20 @@ const ProjectCard = ({
   skills,
   highlights = [],
 }) => {
-  const navigate = () => {
-    window.open(link, "_blank");
-  };
-
-  const navigateCode = () => {
-    window.open(codeLink, "_blank");
-  };
-
-  let skillsColors = {
-    React: "secondary",
-    NodeJS: "primary",
-    PHP: "neutral",
-    Laravel: "accent",
-    Postgresql: "base-content",
+  const skillsColors = {
+    React: "bg-secondary",
+    NodeJS: "bg-primary",
+    PHP: "bg-neutral",
+    Laravel: "bg-accent",
+    Postgresql: "bg-base-content",
   };
 
   return (
     <div className="border-2 border-black w-full max-w-96 bg-base-100 min-h-[70vh] mb-2">
       <figure className="px-10 pt-10">
-        <img
-          src={img}
-          alt={title}
-          className="object-contain w-full h-48 cursor-pointer bg-white border-2 border-black"
-          onClick={navigate}
-        />
+        <a href={link} target="_blank" rel="noreferrer">
+          <img src={img} alt={`${title} preview`} className="object-contain w-full h-48 bg-white border-2 border-black" />
+        </a>
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title">{title}</h2>
@@ -44,20 +33,16 @@ const ProjectCard = ({
           ))}
         </ul>
         <div className="card-actions">
-          <button className="border-[1.5px] border-black text-xl p-2 hover:bg-primary mr-2" onClick={navigate}>
-            Live
-          </button>
+          <a className="border-[1.5px] border-black text-xl p-2 hover:bg-primary mr-2" href={link} target="_blank" rel="noreferrer">Live</a>
           {codeLink && (
-            <button className="border-[1.5px] border-black text-xl p-2 hover:bg-primary" onClick={navigateCode}>
-              Code
-            </button>
+            <a className="border-[1.5px] border-black text-xl p-2 hover:bg-primary" href={codeLink} target="_blank" rel="noreferrer">Code</a>
           )}
         </div>
         <div className="flex">
           {skills.map((skill, index) => (
             <p
               key={index}
-              className={`border-2 border-black bg-${skillsColors[skill]} text-xs m-1 p-1`}
+              className={`border-2 border-black ${skillsColors[skill] || "bg-base-200"} text-xs m-1 p-1`}
             >
               {skill}
             </p>

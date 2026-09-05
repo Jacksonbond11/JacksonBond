@@ -1,13 +1,10 @@
 import React from "react";
-import Header from "../Components/Header";
 import BlogCard from "../Components/BlogCard";
-import Footer from "../Components/Footer";
 import blogIndex from "../blogIndex.json";
 
 const Blog = () => {
   return (
     <div>
-      <Header />
       <div className="text-center ">
         <h1 className="text-4xl my-4">Posts</h1>
       </div>
@@ -53,7 +50,6 @@ const Blog = () => {
           );
         })}
       </div>
-      <Footer />
     </div>
   );
 };

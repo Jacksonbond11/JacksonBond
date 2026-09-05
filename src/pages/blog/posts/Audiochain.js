@@ -1,11 +1,9 @@
 import React from "react";
 import BlogPost from "../../../Components/BlogPost";
-import Header from "../../../Components/Header";
 
 const Audiochain = () => {
   return (
     <div>
-      <Header />
       <BlogPost
         title={"The Audio Chain"}
         body={

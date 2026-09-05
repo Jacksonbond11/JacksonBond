@@ -9,7 +9,6 @@ const Saccharine = () => {
 
   return (
     <div>
-      <Header />
       <div className="flex flex-col items-center justify-center py-4">
         <div className="text-center">
           <h1 className="text-4xl my-4">saccharine</h1>

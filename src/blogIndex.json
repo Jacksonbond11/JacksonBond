@@ -1,12 +1,5 @@
 [
   {
-    "slug": "polarice",
-    "title": "Polar Ice",
-    "img": "/dark-vapor.png",
-    "path": "/blog/post/polarice",
-    "tags": ["gum"]
-  },
-  {
     "slug": "pointersinc",
     "title": "Pointers in C",
     "img": "/cPointer.png",

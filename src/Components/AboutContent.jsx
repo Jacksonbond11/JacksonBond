@@ -6,7 +6,7 @@ const AboutContent = () => {
       <section className="about-grid">
         <div className="page-intro about-intro">
           <p className="eyebrow">A little context</p>
-          <h1>Software developer. SDET. <em>Builder.</em></h1>
+          <h1>Software developer. Product thinker. <em>Builder.</em></h1>
           <p className="about-lede">I like working where quality and delivery meet: turning unclear requirements into usable software, then making sure it actually holds up.</p>
         </div>
         <div className="about-copy">
@@ -20,7 +20,7 @@ const AboutContent = () => {
             I am strongest in React, JavaScript, API integration, automated testing, and debugging. I also bring experience from finance, HVAC, and music, which helps me communicate clearly with non-technical users and keep the work grounded in real-world outcomes.
           </p>
           <p>
-            I am interested in software developer, frontend developer, QA automation, and SDET roles where I can build reliable products, improve test coverage, and keep learning with a strong engineering team.
+            I am interested in software developer and frontend roles where I can build reliable products, improve the details, and keep learning with a strong engineering team.
           </p>
           <div className="skills-panel"><p className="eyebrow">My toolkit</p><div className="tag-row tag-row--large"><span>React</span><span>JavaScript</span><span>Test automation</span><span>API integration</span><span>Debugging</span><span>SEO</span></div></div>
         </div>

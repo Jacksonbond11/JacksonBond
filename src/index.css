@@ -65,15 +65,7 @@ h1 em, h2 em { font-style: normal; color: var(--coral); }
 .hero__stair--one { width: 90%; left: -18%; bottom: 18%; }
 .hero__stair--two { width: 83%; left: -10%; bottom: 1%; background: var(--coral); }
 .hero__stair--three { width: 73%; left: 8%; bottom: -16%; background: var(--yellow); }
-.hero__label { position: absolute; top: 43%; right: 12%; color: var(--ink); font-size: 2.7rem; font-weight: 900; letter-spacing: -.08em; line-height: .85; transform: rotate(8deg); }
 .hero__scribble { position: absolute; right: 10%; bottom: 8%; font-size: 3rem; }
-
-.proof-strip { display: grid; grid-template-columns: repeat(3, 1fr); border-top: var(--line); border-bottom: var(--line); }
-.proof-strip > div { display: grid; grid-template-columns: 48px 1fr; gap: 0 10px; padding: 20px 22px; }
-.proof-strip > div + div { border-left: var(--line); }
-.proof-strip strong { grid-row: span 2; color: var(--coral); font-size: .85rem; }
-.proof-strip span { font-weight: 900; }
-.proof-strip small { color: color-mix(in srgb, var(--ink) 70%, transparent); font-size: .78rem; }
 
 .feature-section { padding-top: 110px; padding-bottom: 100px; }
 .section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
@@ -172,9 +164,6 @@ h1 em, h2 em { font-style: normal; color: var(--coral); }
   .hero__copy h1 { font-size: clamp(3.4rem, 16vw, 5.3rem); }
   .hero__art { min-height: 260px; }
   .hero__sun { width: 150px; height: 150px; }
-  .hero__label { font-size: 2rem; }
-  .proof-strip { grid-template-columns: 1fr; }
-  .proof-strip > div + div { border-top: var(--line); border-left: 0; }
   .section-heading, .site-footer__top, .site-footer__bottom { align-items: flex-start; flex-direction: column; }
   .feature-section { padding-top: 76px; }
   .feature-project__body { padding: 28px; }

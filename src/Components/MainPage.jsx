@@ -1,81 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const MainPage = () => {
-  return (
-    <div>
-      <section className="flex flex-col md:flex-row md:min-h-[50vh]">
-        <div className="flex-1 m-auto align-middle text-center items-center">
-          <h1 className="md:text-[100px] text-6xl my-4 font-bold flex-1">JACKSON BOND</h1>
-        </div>
-        <div className="border-black border-2 md:border-t-0 flex-1 flex flex-col justify-center items-center min-h-64 md:h-full px-4 py-8">
-          <p className="text-[25px] my-4 text-center">
-            Software developer and SDET focused on React, automation, and production web apps.
-          </p>
-          <p className="text-[25px] my-4 text-center">
-            I build tested, usable software from ambiguous ideas to shipped products.
-          </p>
-        </div>
-      </section>
-      <div className=" flex justify-center m-6 mt-10">
-        <h2 className=" text-3xl">Featured projects</h2>
-      </div>
-
-      {/* //project 1 */}
-      <div className="flex flex-col md:flex-row justify-apart">
-        <div className="flex flex-col border-black border-2 md:max-w-[50vw] text-center p-2 pb-6 md:ml-1 md:mr-1">
-          <h1 className="text-[60px] my-4 font-bold flex-1">Trisha Gonzalez Barber</h1>
-          <p className="text-lg px-4 pb-4">
-            Local-service marketing site built for booking conversion, performance, and search visibility.
-          </p>
-          <div className="flex justify-center ">
-            <div className="relative w-3/4 group cursor-pointer">
-              <div
-                className="absolute border-2 border-black group-hover:bg-accent bg-primary"
-                style={{
-                  top: "12px",
-                  left: "-12px",
-                  width: "100%",
-                  height: "100%",
-                }}
-              ></div>
-              <a href="https://trishathebarber.com/">
-                <img
-                  src="/projects/trisha-cover.jpg"
-                  alt="Trisha Gonzalez Barber website preview"
-                  className="w-full h-72 object-contain bg-white border-2 border-black relative"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <Link to="/projects">
-        <div className="border-black border-2 border-t-0 md:ml-1 md:mr-1 text-center hover:bg-primary hover:cursor-pointer mb-20">
-          <p className="text-[25px]">View more projects</p>
-        </div>
-      </Link>
-
-      <div className="text-center m-6 align-middle">
-        <h2 className=" text-3xl">Some of my links</h2>
-        <div className="">
-          <ul>
-            <a href="https://github.com/JacksonBond11">
-              <li className="border-2 border-transparent hover:border-black hover:bg-accent">
-                Github
-              </li>
-            </a>
-            <a href="https://www.linkedin.com/in/jacksonbond1/">
-              <li className="border-2 border-transparent hover:border-black  hover:bg-accent">
-                Linkedin
-              </li>
-            </a>
-          </ul>
+const MainPage = () => (
+  <div className="home-page">
+    <section className="hero page-wrap">
+      <div className="hero__copy">
+        <p className="eyebrow"><span className="eyebrow__dot" /> Software developer · SDET · Oklahoma City</p>
+        <h1>I make software feel <em>inevitable.</em></h1>
+        <p className="hero__lede">I turn fuzzy ideas into reliable, useful products — then test the edges until they are ready for real people.</p>
+        <div className="button-row">
+          <Link className="button button--primary" to="/projects">See the work <span aria-hidden="true">↘</span></Link>
+          <Link className="button button--quiet" to="/about">More about me <span aria-hidden="true">→</span></Link>
         </div>
       </div>
-    </div>
-  );
-};
+      <div className="hero__art" aria-label="A colorful abstract composition">
+        <div className="hero__sun" /><div className="hero__stair hero__stair--one" /><div className="hero__stair hero__stair--two" /><div className="hero__stair hero__stair--three" />
+        <span className="hero__label">SHIP<br />BETTER</span><span className="hero__scribble" aria-hidden="true">✳</span>
+      </div>
+    </section>
+    <section className="proof-strip page-wrap" aria-label="Areas of focus">
+      <div><strong>01</strong><span>Build</span><small>React · JavaScript · APIs</small></div>
+      <div><strong>02</strong><span>Protect</span><small>Automation · QA · Debugging</small></div>
+      <div><strong>03</strong><span>Ship</span><small>Clear UX · Performance · SEO</small></div>
+    </section>
+    <section className="feature-section page-wrap">
+      <div className="section-heading"><div><p className="eyebrow">Selected work</p><h2>Useful things, shipped.</h2></div><Link className="text-link" to="/projects">View all projects <span aria-hidden="true">↗</span></Link></div>
+      <article className="feature-project">
+        <a className="feature-project__image" href="https://taffystack.com/" target="_blank" rel="noreferrer"><img src="/projects/taffystack.jpg" alt="TaffyStack website preview" /><span className="image-badge">Live site ↗</span></a>
+        <div className="feature-project__body"><p className="project-number">01 / Featured</p><h3>TaffyStack</h3><p>A bright, conversion-minded website for booking software built for independent businesses.</p><div className="tag-row"><span>Product design</span><span>Frontend</span><span>Responsive web</span></div><a className="text-link" href="https://taffystack.com/" target="_blank" rel="noreferrer">Visit TaffyStack <span aria-hidden="true">↗</span></a></div>
+      </article>
+    </section>
+    <section className="home-cta page-wrap"><p className="eyebrow">The short version</p><h2>Good software is a team sport. I bring the curiosity, the follow-through, and the test cases.</h2><Link className="button button--dark" to="/about">Get the longer version <span aria-hidden="true">↗</span></Link></section>
+  </div>
+);
 
 export default MainPage;

@@ -1,56 +1,17 @@
 import React from "react";
 import ProjectCard from "../Components/ProjectCard";
 
-const Projects = () => {
-  return (
-    <div>
-      <div className="m-auto max-w-7xl min-h-[90vh]">
-        <div className="text-center">
-          <h1 className="text-4xl my-4">Projects</h1>
-          <div className="grid grid-cols-1 lg:grid-cols-3 md:p-8 items-stretch gap-4 px-4 py-2 m-auto">
-            <ProjectCard
-              title={"Trisha Gonzalez Barber"}
-              description={
-                "A polished local-service marketing site for an Oklahoma City barber, built around booking conversion and strong local SEO."
-              }
-              img={"/projects/trisha-cover.jpg"}
-              link={"https://trishathebarber.com/"}
-              codeLink={"https://github.com/Jacksonbond11/trisha"}
-              skills={["React"]}
-              highlights={[
-                "Built a conversion-focused marketing site for a local service business.",
-                "Added structured local SEO content, metadata, and booking paths.",
-              ]}
-            />
-            <ProjectCard
-              title={"TaffyStack"}
-              description={
-                "A playful, polished web experience built to make the TaffyStack brand easy to explore."
-              }
-              link={"https://taffystack.com/"}
-              skills={["Web design"]}
-              highlights={["Designed as a responsive public-facing experience."]}
-            />
-            <ProjectCard
-              title={"Old Man Pham's Lawn Care"}
-              description={
-                "A service-area focused website for an OKC metro lawn care business, with location pages and search-friendly content."
-              }
-              img={"/projects/oldmanphams.jpg"}
-              link={"https://www.oldmanphamslawncare.com/"}
-              codeLink={"https://github.com/Jacksonbond11/OldManPhams"}
-              skills={["React"]}
-              highlights={[
-                "Created service-area pages for multiple OKC metro locations.",
-                "Balanced business copy, gallery content, and contact flows for lead generation.",
-              ]}
-            />
-          </div>
-        </div>
-      </div>
+const projects = [
+  { title: "TaffyStack", description: "A bright, conversion-minded website for booking software built for independent businesses.", img: "/projects/taffystack.jpg", link: "https://taffystack.com/", skills: ["Product design", "Frontend"], highlights: ["Translated a product story into a clear, memorable public-facing experience.", "Balanced playful visual direction with a focused conversion path."] },
+  { title: "Trisha Gonzalez Barber", description: "A polished local-service marketing site for an Oklahoma City barber, built around booking conversion and local search.", img: "/projects/trisha-cover.jpg", link: "https://trishathebarber.com/", codeLink: "https://github.com/JacksonBond11/trisha", skills: ["React", "SEO"], highlights: ["Built a conversion-focused marketing site for a local service business.", "Added structured local SEO content, metadata, and booking paths."] },
+  { title: "Old Man Pham's Lawn Care", description: "A service-area focused website for an OKC metro lawn care business, with location pages and search-friendly content.", img: "/projects/oldmanphams.jpg", link: "https://www.oldmanphamslawncare.com/", codeLink: "https://github.com/JacksonBond11/OldManPhams", skills: ["React", "Content strategy"], highlights: ["Created service-area pages for multiple OKC metro locations.", "Balanced business copy, gallery content, and contact flows for lead generation."] },
+];
 
-    </div>
-  );
-};
+const Projects = () => (
+  <div className="page-wrap page-section">
+    <div className="page-intro"><p className="eyebrow">Selected work</p><h1>Small teams. Real users. <em>Shipped.</em></h1><p>Projects where design, implementation, and quality all had to pull in the same direction.</p></div>
+    <div className="project-grid">{projects.map((project) => <ProjectCard key={project.title} {...project} />)}</div>
+  </div>
+);
 
 export default Projects;

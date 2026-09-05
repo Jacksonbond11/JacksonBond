@@ -2,41 +2,27 @@ import React from "react";
 
 const AboutContent = () => {
   return (
-    <div className="pl-2 pr-2">
-      <section className="flex flex-col items-center justify-center min-h-full border-2 border-t-0 border-black">
-        <div className="border-b-2 border-black border-t-0 w-full text-center">
-          <h2 className="text-3xl py-12">Software developer. SDET. Builder.</h2>
+    <div className="page-wrap page-section">
+      <section className="about-grid">
+        <div className="page-intro about-intro">
+          <p className="eyebrow">A little context</p>
+          <h1>Software developer. SDET. <em>Builder.</em></h1>
+          <p className="about-lede">I like working where quality and delivery meet: turning unclear requirements into usable software, then making sure it actually holds up.</p>
         </div>
-        <div className="flex flex-col justify-center w-9/12 p-4">
+        <div className="about-copy">
           <p>
-            I am a software developer from Oklahoma City with experience across
-            QA, test automation, frontend development, and full product builds.
-            I like working where quality and delivery meet: turning unclear
-            requirements into usable software, then making sure it actually
-            holds up.
+            I am a software developer from Oklahoma City with experience across QA, test automation, frontend development, and full product builds.
           </p>
-          <br />
           <p>
-            My background started in manual QA, grew into software development,
-            and led me to earn a Bachelor's degree in Computer Science. That
-            path gave me a practical view of the full software development
-            lifecycle: how features are planned, built, tested, released, and
-            improved after real users touch them.
+            My background started in manual QA, grew into software development, and led me to earn a Bachelor&apos;s degree in Computer Science. That path gave me a practical view of the full software development lifecycle: how features are planned, built, tested, released, and improved after real users touch them.
           </p>
-          <br />
           <p>
-            I am strongest in React, JavaScript, API integration, automated
-            testing, and debugging. I also bring experience from finance, HVAC,
-            and music, which helps me communicate clearly with non-technical
-            users and keep the work grounded in real-world outcomes.
+            I am strongest in React, JavaScript, API integration, automated testing, and debugging. I also bring experience from finance, HVAC, and music, which helps me communicate clearly with non-technical users and keep the work grounded in real-world outcomes.
           </p>
-          <br />
           <p>
-            I am interested in software developer, frontend developer, QA
-            automation, and SDET roles where I can build reliable products,
-            improve test coverage, and keep learning with a strong engineering
-            team.
+            I am interested in software developer, frontend developer, QA automation, and SDET roles where I can build reliable products, improve test coverage, and keep learning with a strong engineering team.
           </p>
+          <div className="skills-panel"><p className="eyebrow">My toolkit</p><div className="tag-row tag-row--large"><span>React</span><span>JavaScript</span><span>Test automation</span><span>API integration</span><span>Debugging</span><span>SEO</span></div></div>
         </div>
       </section>
     </div>

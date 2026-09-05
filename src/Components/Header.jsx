@@ -1,63 +1,37 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navItems = [
+    { label: "About", to: "/about" },
+    { label: "Projects", to: "/projects" },
+    { label: "Writing", to: "/blog" },
+  ];
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <div>
-      <div className="navbar relative border-b-2 border-black">
-        <div className="flex-1 flex justify-between items-center">
-          <Link
-            to="/"
-            className="border-[1.5px] border-black text-xl p-2 hover:bg-primary"
-          >
-            Jackson Bond
-          </Link>
-          <button
-            className="border-[1.5px] w-12 h-12 border-black text-xs sm:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            Menu
-          </button>
-        </div>
-        <div
-          className={`absolute z-10 sm:relative sm:block ${
-            isMenuOpen ? "block" : "hidden"
-          } right-0 sm:w-auto top-full bg-base-100`}
-        >
-          <ul className="sm:flex sm:flex-row">
-            <li>
-              <Link
-                to="/about"
-                className="border-[1.5px] border-black text-xl p-2 hover:bg-primary mr-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/projects"
-                className="border-[1.5px] border-black text-xl p-2 hover:bg-primary mr-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/blog"
-                className="border-[1.5px] border-black text-xl p-2 hover:bg-primary mr-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Blog
-              </Link>
-            </li>
-          </ul>
-        </div>
+    <header className="site-header">
+      <div className="site-header__inner">
+        <Link to="/" className="brand" onClick={closeMenu} aria-label="Jackson Bond home">
+          <span className="brand__mark">JB</span>
+          <span>Jackson Bond</span>
+        </Link>
+        <button className="menu-toggle" type="button" aria-expanded={isMenuOpen} aria-controls="site-navigation" onClick={() => setIsMenuOpen((open) => !open)}>
+          <span>{isMenuOpen ? "Close" : "Menu"}</span>
+        </button>
+        <nav id="site-navigation" className={`site-nav ${isMenuOpen ? "site-nav--open" : ""}`} aria-label="Primary navigation">
+          {navItems.map((item) => (
+            <NavLink key={item.to} to={item.to} onClick={closeMenu} className={({ isActive }) => `nav-link ${isActive ? "nav-link--active" : ""}`}>
+              {item.label}
+            </NavLink>
+          ))}
+          <a className="nav-link nav-link--cta" href="https://www.linkedin.com/in/jacksonbond1/" target="_blank" rel="noreferrer">
+            Let&apos;s connect <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
       </div>
-    </div>
+    </header>
   );
 };
 

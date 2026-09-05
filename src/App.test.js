@@ -5,6 +5,6 @@ jest.mock('@vercel/analytics/react', () => ({ Analytics: () => null }), { virtua
 
 test('renders the portfolio homepage', () => {
   render(<App />);
-  const linkElement = screen.getByRole('heading', { name: /jackson bond/i });
+  const linkElement = screen.getByRole('heading', { name: /make software feel/i });
   expect(linkElement).toBeInTheDocument();
 });
